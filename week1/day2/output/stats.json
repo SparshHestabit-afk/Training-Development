@@ -1,0 +1,44 @@
+{
+  "totalWords": 200000,
+  "uniqueWords": 9,
+  "longestWord": "consectetur",
+  "shortestWord": "sit",
+  "topRepeatedWords": [
+    {
+      "word": "dolor",
+      "count": 40000
+    },
+    {
+      "word": "Lorem",
+      "count": 20000
+    },
+    {
+      "word": "ipsum",
+      "count": 20000
+    },
+    {
+      "word": "sit",
+      "count": 20000
+    },
+    {
+      "word": "amet",
+      "count": 20000
+    },
+    {
+      "word": "consectetur",
+      "count": 20000
+    },
+    {
+      "word": "adipiscing",
+      "count": 20000
+    },
+    {
+      "word": "Dus",
+      "count": 20000
+    },
+    {
+      "word": "libero",
+      "count": 20000
+    }
+  ]
+}
