@@ -26,7 +26,7 @@ It gives the Linux Kernel version of your current operating system
         cat /etc/os-release
 It gives the complete information about the release of the version and its distribution(Linux).
             
-! [An Screenshot image of OS version command & output](/home/sparshagarwal/Training-Development/week1/day1/Task_1/Images/os_version.png)
+![An Screenshot image of OS version command & output](Images/os_version.png)
             
             OR 
             
@@ -34,7 +34,7 @@ It gives the complete information about the release of the version and its distr
         lsb_release -a
 It gives the Linux Standard Base module information about the operating system, including the established standards and guidelines across Linux Distributions.
 
-! [An Screenshot image of OS version command & output](/home/sparshagarwal/Training-Development/week1/day1/Task_1/Images/os_version_lsb.png)
+! [An Screenshot image of OS version command & output](Images/os_version_lsb.png)
 
 
 ->Current Shell (bash/zsh/powershell):
@@ -51,7 +51,7 @@ Generally, its of two types:
             echo $SHELL
 It gives the current/working shell of the system on the console.
 
-! [An Screenshot image of shell command & output](/home/sparshagarwal/Training-Development/week1/day1/Task_1/Images/shell.png)
+![An Screenshot image of shell command & output](/home/sparshagarwal/Training-Development/week1/day1/Task_1/Images/shell.png)
 
 ->Node Binary Path:
     It refers to the location of the node executable file on a system, which is used to run JavaScript code outside the browser.
@@ -67,10 +67,10 @@ But before executing this command , make sure to install Node.js on the system
             sudo apt install -y nodejs npm
 It installs the Node.js and NPM on the system using the packages provided by the operating system, while acting as a superuser.
 
-! [An Screenshot image of Node.js & NPM installation command & output](/home/sparshagarwal/Training-Development/week1/day1/Task_1/Images/node install.png)
-! [An Screenshot image of Node.js & NPM installation command & output](/home/sparshagarwal/Training-Development/week1/day1/Task_1/Images/node version.png)
+![An Screenshot image of Node.js & NPM installation command & output](/home/sparshagarwal/Training-Development/week1/day1/Task_1/Images/node install.png)
+![An Screenshot image of Node.js & NPM installation command & output](/home/sparshagarwal/Training-Development/week1/day1/Task_1/Images/node version.png)
 
-! [An Screenshot image of finding binary node path command & output](/home/sparshagarwal/Training-Development/week1/day1/Task_1/Images/node binary path.png)
+![An Screenshot image of finding binary node path command & output](/home/sparshagarwal/Training-Development/week1/day1/Task_1/Images/node binary path.png)
 
 
 -> NPM Global Installation Path:
@@ -82,7 +82,7 @@ It installs the Node.js and NPM on the system using the packages provided by the
             npm root -g
 It gives the path to the directory where all the global packages are installed.
 
-! [An Screenshot image of the finding npm global installation path command & output](/home/sparshagarwal/Training-Development/week1/day1/Task_1/Images/npm global installation path.png)
+![An Screenshot image of the finding npm global installation path command & output](/home/sparshagarwal/Training-Development/week1/day1/Task_1/Images/npm global installation path.png)
 
 
 ->All path entries that include "node" or npm:
@@ -94,7 +94,7 @@ It gives the path to the directory where all the global packages are installed.
             echo $PATH | tr ':' '\n' | grep -i "node\|npm"
 It gives all the entries or the path where node or npm is included.
 
-! [An Screenshot image of finding all entries with command & output](/home/sparshagarwal/Training-Development/week1/day1/Task_1/Images/all entries including node_npm.png)
+![An Screenshot image of finding all entries with command & output](/home/sparshagarwal/Training-Development/week1/day1/Task_1/Images/all entries including node_npm.png)
 
 This usually gives no output when executed on NPM, while the command and system are initialized correctly.
 Therefore, it is executed using NVM (Node Version Manager)
