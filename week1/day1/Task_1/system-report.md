@@ -67,10 +67,10 @@ But before executing this command , make sure to install Node.js on the system
             sudo apt install -y nodejs npm
 It installs the Node.js and NPM on the system using the packages provided by the operating system, while acting as a superuser.
 
-![An Screenshot image of Node.js & NPM installation command & output](Images/node install.png)
-![An Screenshot image of Node.js & NPM installation command & output](Images/node version.png)
+![An Screenshot image of Node.js & NPM installation command & output](Images/node_install.png)
+![An Screenshot image of Node.js & NPM installation command & output](Images/node_version.png)
 
-![An Screenshot image of finding binary node path command & output](Images/node binary path.png)
+![An Screenshot image of finding binary node path command & output](Images/node_binary_path.png)
 
 
 -> NPM Global Installation Path:
@@ -82,7 +82,7 @@ It installs the Node.js and NPM on the system using the packages provided by the
             npm root -g
 It gives the path to the directory where all the global packages are installed.
 
-![An Screenshot image of the finding npm global installation path command & output](Images/npm global installation path.png)
+![An Screenshot image of the finding npm global installation path command & output](Images/npm_global_installation_path.png)
 
 
 ->All path entries that include "node" or npm:
@@ -94,7 +94,7 @@ It gives the path to the directory where all the global packages are installed.
             echo $PATH | tr ':' '\n' | grep -i "node\|npm"
 It gives all the entries or the path where node or npm is included.
 
-![An Screenshot image of finding all entries with command & output](Images/all entries including node_npm.png)
+![An Screenshot image of finding all entries with command & output](Images/all_entries_including_node_npm.png)
 
 This usually gives no output when executed on NPM, while the command and system are initialized correctly.
 Therefore, it is executed using NVM (Node Version Manager)
