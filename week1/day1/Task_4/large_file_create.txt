@@ -1,0 +1,3 @@
+command to create the large file :
+
+dd if=/dev/urandom of=large_test_files.bin bs=1M count=50
