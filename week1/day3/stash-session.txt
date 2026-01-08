@@ -1,0 +1,35 @@
+﻿Hestabit Learning & Development
+Week 1
+
+
+The stash workflow was used to safely manage uncommitted local changes while synchronizing the repository with the remote branch.
+
+
+Initially, sample.txt contained local changes that were not ready to be committed. These changes could have caused conflicts or been lost during a pull operation.
+
+
+To avoid this, git stash was used to temporarily save the current working directory and index state.
+
+
+  
+
+
+
+After stashing the changes, git pull was executed to fetch and merge updates from the remote repository. Since running git pull at this stage was safe because the working directory was 
+Clean.
+
+
+  
+
+
+
+  
+
+Once the pull completed successfully, git stash apply was used to restore the previously stashed changes back into the working directory.
+
+
+  
+
+
+
+This workflow ensured that local progress was preserved without interfering with repository synchronization.
