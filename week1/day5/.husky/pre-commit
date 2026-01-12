@@ -1,7 +1,9 @@
-echo "Husky is Running"
+#!/usr/bin/env sh
 
-npm run lint || exit 1 
+echo "Running pre-commit checks"
 
-npm run format || exit 1
+npm run lint || exit 1
 
 ./validate.sh || exit 1
+
+echo "Pre-Commit checks passed"
