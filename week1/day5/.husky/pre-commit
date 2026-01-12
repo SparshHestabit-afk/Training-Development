@@ -1,0 +1,12 @@
+#!usr/bin/env sh
+
+echo "Running ESLint...."
+npm run lint || exit 1
+
+echo "Checking Prettier formatting...."
+npm run format || exit 1
+
+echo "Running Validation Script...."
+./validate.sh || exit 1
+
+echo "Pre-Commit checks passed" 
