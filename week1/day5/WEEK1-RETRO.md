@@ -163,3 +163,5 @@ By the end of Week 1, my mindset shifted from simply completing tasks to underst
 
 This week established a strong foundation for future learning and provided hands-on experience with real-world engineering challenges.
 
+
+A help of llm was used, to modify the format and enhance the content of the file.
