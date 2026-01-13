@@ -1,5 +1,5 @@
-#                         HestaBit Training Development
-#                               Week 2 - Day 1
+#                                               HestaBit Training Development
+#                                                       Week 2 - Day 1
 
 # Semantic News Blog Webpage
 
