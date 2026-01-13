@@ -1,5 +1,5 @@
-#                                               HestaBit Training Development
-#                                                       Week 2 - Day 1
+                                               HestaBit Training Development
+                                                    `Week 2 - Day 1
 
 # Semantic News Blog Webpage
 
@@ -168,13 +168,6 @@ These choices help improve the experience for users relying on assistive technol
 
 ---
 
-## Technologies Used
-- HTML5
-- Browser-native validation
-- No CSS or JavaScript (structure-focused task)
-
----
-
 ## Key Takeaways
 Through this task:
 - The importance of semantic HTML became clear
@@ -183,17 +176,3 @@ Through this task:
 - A realistic news/blog structure was created from scratch
 
 ---
-
-## Possible Improvements
-- Adding CSS for layout and responsiveness
-- Enhancing validation using JavaScript
-- Connecting the feedback form to a backend service
-- Implementing pagination and dynamic search
-
----
-
-## Usage Notes
-This project is intended strictly for **learning and training purposes**, focusing on structure, semantics, and accessibility rather than design.
-
----
-
