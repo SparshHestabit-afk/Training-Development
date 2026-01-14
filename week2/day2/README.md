@@ -16,6 +16,6 @@
 ### Final Output / Look
 
 ![An screenshot image of the final look of the webpage (created) after successfully integrated CSS](Images/Day2_Final_Page_Look.png)
-![An screenshot image of the final look of the webpage (created) after successfully integrated CSS]("Images/Day2_Final_Page_Look.png")
+![An screenshot image of the final look of the webpage (created) after successfully integrated CSS](Images/Day2_Final_Page_Look2.png)
 
 ---
