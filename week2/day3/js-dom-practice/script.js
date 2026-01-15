@@ -6,7 +6,7 @@ menuBtn.addEventListener("click", () => {
   navMenu.classList.toggle("show");
 });
 
-/* ACCORDION */
+/* Frequently asked questions*/
 const faqHeaders = document.querySelectorAll(".faq-header");
 
 faqHeaders.forEach(header => {
