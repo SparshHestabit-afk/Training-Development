@@ -61,6 +61,8 @@ function renderTodos() {
                         input.readOnly = false;
                         input.focus();
                         editButton.textContent = "Save";
+                        cancelButton.style.display = "inline-block";
+                        cancelButton.style.marginLeft = "13px";
                     } else {
 
                         const updatedText = input.value.trim();
@@ -72,11 +74,28 @@ function renderTodos() {
 
                         input.readOnly = true;
                         editButton.textContent = "Edit";
+                        cancelButton.style.display = "none";
+
                     }
                 } catch (error) {
                     handleError("todoUpdate", error);
                     alert("Failed to update task: " + error.message);
                     input.value = todo.text; // Revert to old value
+                }
+            });
+
+            //Cancel Task Button
+            const cancelButton = document.createElement('button');
+            cancelButton.textContent = 'Cancel';
+            cancelButton.style.display = 'none';
+
+            cancelButton.addEventListener('click', () => {
+                try{
+                    input.value = todo.text;
+                    editButton.textContent = "Edit";
+                    cancelButton.style.display = "none";
+                } catch (error) {
+                    handleError("todoCancel", error);
                 }
             });
 
@@ -97,7 +116,7 @@ function renderTodos() {
             });
 
             //Appending Input and Delete Button
-            li.append(input, editButton, deleteButton);
+            li.append(input, editButton, cancelButton, deleteButton);
             todoList.appendChild(li);
         });
     } catch (error) {
