@@ -254,7 +254,7 @@ styles/
 ![An Screenshot image-2 of the profile page (user profile page of application)](Screenshots/Profile_Page_2.png)
 
 ### User List Page
-![An Screenshot image of the user-list page (user list (containing dummy data) of application)](Screenshots/User_Page.png)
+![An Screenshot image of the user-list page (user list (containing dummy data) of application)](Screenshots/Users_Page.png)
 ## Conclusion
 
 Week 03 strengthened the understanding of **modern frontend architecture** and dashboard-oriented design. The concepts learned during this week—layouts, state management, component reuse, and UX patterns—form a solid foundation for advanced features and future development phases.
