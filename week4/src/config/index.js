@@ -19,7 +19,7 @@ dotenv.config({
 	path: path.resolve(process.cwd(), envFile),
 })
 
-const requireVars = ['PORT','DB_URL'];
+const requireVars = ['PORT','DB_URI'];
 
 requireVars.forEach((key) => {
 	if(!process.env[key]) {
@@ -30,5 +30,5 @@ requireVars.forEach((key) => {
 module.exports = {
 	env,
 	PORT: process.env.PORT,
-	DB_URL: process.env.DB_URL,
+	DB_URI: process.env.DB_URI,
 };
