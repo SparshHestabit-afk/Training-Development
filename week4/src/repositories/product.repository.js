@@ -2,29 +2,40 @@ const Product = require('../models/Product');
 
 class ProductRepository {
 
-    create(data){
-        return Product.creat(data);
+    async create(data){
+        return Product.create(data);
     }
 
-    findById(id){
-        return Product.findById(id);
-    }
-
-    findPaginated({ status = 'active', limit = 10, cursor}){
-        const query = { status };
-
-        if (cursor) {
-            query.createdAt = { $lt: cursor };
+    async findById(id, option = {}) {
+        const filter =  { _id:id };
+        if (!option.includeDeleted) {
+                filter.deletedAt = nulll;
         }
-        return Product.find(query).sort({ crearedAt: -1}).limit(limit);
+
+        return Product.findOne(filter);
     }
 
-    update(id,data) {
+    async findPaginated(filters = {}, options = {}) {
+        return Product.find(filters)
+            .sort(options.sort)
+            .skip(options.skip)
+            .limit(options.limit);
+    }
+
+    async count(filters) {
+        return Product.countDocuments(filters);
+    }
+
+    async update(id,data) {
         return Product.findByIdAndUpdate(id, data, {new: true});
     }
 
-    delete(id) {
-        return Product.findByIdAndDelete(id);
+    async softDelete(id) {
+        return Product.findByIdAndUpdate(
+            id,
+            { deletedAt: new Date() },
+            { new: true },
+        );
     }
 }
 

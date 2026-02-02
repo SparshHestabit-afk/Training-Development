@@ -1,5 +1,7 @@
 const express = require('express');
 const logger = require('../utils/logger.js');
+const errorMiddleware = require('../middlewares/error.middleware.js');
+const productRoutes = require('../routes/product.routes.js');
 
 function createApp() {
 	const app = express();
@@ -9,22 +11,9 @@ function createApp() {
 
 	logger.info('MiddleWare Loaded');
 
-	const router = express.Router();
-	let routeCount = 0;
+	app.use('/', productRoutes);
 
-	router.get('/health', (req,res) => {
-		res.json({ status: 'OK', message: "Routes are working successfully" });
-	});
-	routeCount++;
-
-	router.get('/ping', (req,res) => {
-		res.json('pong');
-	});
-	routeCount++;
-
-	app.use('/', router);
-
-	logger.info(`Routes mounted: ${routeCount} endpoints`);
+	app.use(errorMiddleware);
 
 	return app;
 }
