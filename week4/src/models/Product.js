@@ -8,20 +8,28 @@ const productSchema = new mongoose.Schema(
             required: true,
             trim: true,
         },
+        description: {
+            type: String,
+            trim: true,
+        },
         price: {
             type: Number,
             required: true,
             min: 0,
         },
-        ratings: {
-            type: [Number],
-            default: [],
+        tags: {
+            type: [String],
+            index: true,
         },
         status: {
             type: String,
-            enum: ['active','inactive'],
-            default: 'active',
-        }
+            enum: ['Active','Inactive'],
+            default: 'Active',
+        },
+        deletedAt: {
+            type: Date,
+            default: null
+        },
     },
     {
         timestamps: true,
@@ -36,5 +44,7 @@ productSchema.virtual('averageRating').get(function () {
         this.ratings.reduce((sum,r) => sum+r, 0) / this.ratings.length
     );
 });
+
+productSchema.index({ status: 1, createdAt: -1 });
 
 module.exports = mongoose.model('Product', productSchema);

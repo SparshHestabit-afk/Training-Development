@@ -67,10 +67,10 @@ async function connectDB() {
 					deletedAt: null,
 				},
 				{
-					name: "Samsung",
+					name: "Samsung Galaxy",
 					description: "Samsung Phone",
 					price: 650,
-					tags: ["Samsun", "Smart-Phone"],
+					tags: ["Samsung", "Smart-Phone"],
 					status: "Inactive",
 					deletedAt: null,
 				},
