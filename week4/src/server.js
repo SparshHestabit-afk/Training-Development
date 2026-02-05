@@ -4,7 +4,7 @@ const connectDB = require('./loaders/db');
 const createApp = require('./loaders/app');
 
 async function startServer() {
-	try{
+	try {
 		logger.info(`Environment : ${config.env}`);
 
 		await connectDB();
@@ -14,6 +14,7 @@ async function startServer() {
 		app.listen(config.PORT, () => {
 			logger.info(`Server started on PORT: ${config.PORT}`);
 		});
+
 	} catch (error) {
 		logger.error(`Startup Failed : ${error.message}`);
 		process.exit(1);

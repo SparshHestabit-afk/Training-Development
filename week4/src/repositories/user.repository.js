@@ -2,15 +2,15 @@ const User = require('../models/User');
 
 class UserRepository {
     
-    create(data) {
+    async create(data) {
         return User.create(data);
     }
 
-    findById(id) {
+    async findById(id) {
         return User.findById(id);
     }
 
-    findPaginated({status = 'active', limit = 10, cursor}) {
+    async findPaginated({status = 'active', limit = 10, cursor}) {
         const query = { status };
 
         if(cursor) {
@@ -20,11 +20,11 @@ class UserRepository {
         return User.find(query).sort({ createdAt: -1 }).limit(limit);
     }
 
-    update(id,data) {
+    async update(id,data) {
         return User.findByIdAndUpdate(id,data,{ new: true });
     }
 
-    delete(id) {
+    async delete(id) {
         return User.findByIdAndDelete(id);
     }
 }

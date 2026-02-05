@@ -14,6 +14,7 @@ async function connectDB() {
 		});
 
 		const userCount = await User.countDocuments();
+		logger.info(`User documents inside collection:${userCount}`);
 		if (userCount === 0) {
 			await User.create([
 				{
@@ -55,7 +56,7 @@ async function connectDB() {
 		}
 
 		const productCount = await Product.countDocuments();
-		logger.info(`${productCount}`);
+		logger.info(`Product documents inside collection:${productCount}`);
 		if (productCount === 0) {
 			await Product.create([
 				{

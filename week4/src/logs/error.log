@@ -1,0 +1,14 @@
+[2026-02-05T10:46:30.455Z] [ERROR] [f9cf393f-3395-4216-98ca-a77805279919] User is not defined
+[2026-02-05T10:46:55.511Z] [ERROR] [7df63513-0778-474c-b448-144132427bfe] User is not defined
+[2026-02-05T10:47:30.647Z] [ERROR] [f415fbaa-5a2b-49fd-afdf-e4d261e87da5] Cannot read properties of undefined (reading 'id')
+[2026-02-05T10:47:59.165Z] [ERROR] [586326e6-42ca-432b-b3ea-2864048304ad] Cannot read properties of undefined (reading 'id')
+[2026-02-05T10:48:06.921Z] [ERROR] [129ae958-e648-469e-ba25-8471b0bda2dd] userService.findById is not a function
+[2026-02-05T10:48:24.712Z] [ERROR] [3ddac59d-925a-4d9c-8c49-8ffc36c87e2f] Cannot read properties of undefined (reading 'id')
+[2026-02-05T10:49:33.735Z] [ERROR] [dc56102e-93d1-4761-8d56-5ae81912817b] Cannot read properties of undefined (reading 'id')
+[2026-02-05T10:49:51.185Z] [ERROR] [b908f6f5-777f-4344-b99f-cadd8208a9ec] Cannot read properties of undefined (reading 'id')
+[2026-02-05T10:50:34.268Z] [ERROR] [e19d3238-4718-461a-bdc9-32bfb76609c7] Cannot read properties of undefined (reading 'id')
+[2026-02-05T10:52:08.880Z] [ERROR] [d36abd6c-d73b-4f4b-b439-1fd79e245b8d] Cannot read properties of undefined (reading 'id')
+[2026-02-05T10:57:57.350Z] [ERROR] [d51423f7-c992-407f-852e-5ec2a6463052] Cannot read properties of undefined (reading 'length')
+[2026-02-05T11:06:30.157Z] [ERROR] [de2d6c4f-5ff3-4f59-bcaf-d73d4fc42e40] Cannot read properties of undefined (reading 'length')
+[2026-02-05T11:07:00.526Z] [ERROR] [5e7148b5-6cd0-4485-8333-bb4f89679b9a] Cannot read properties of undefined (reading 'length')
+[2026-02-05T11:19:17.493Z] [ERROR] [dd02940d-2dfd-4f71-aac4-fe69f3ac35df] Cannot read properties of undefined (reading 'length')
