@@ -1,0 +1,67 @@
+services:
+  mongo:
+    image: mongo:latest
+    container_name: week5-todo-mongo
+    env_file:
+      - .env
+    restart: unless-stopped
+    volumes:
+      - week5-mongo-data:/data/db
+    healthcheck:
+      test: ["CMD", "mongosh", "--eval", "db.adminCommand('ping')"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+      start_period: 5s
+
+  backend:
+    build: ./backend
+    container_name: week5-todo-backend
+    env_file:
+      - .env
+    depends_on:
+      mongo:
+        condition: service_healthy
+    expose:
+      - "5000"
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "http://week5-todo.local:5000/health"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+      start_period: 5s
+  
+  frontend:
+    build: ./frontend
+    container_name: week5-todo-frontend
+    depends_on:
+      backend:
+        condition: service_healthy
+    environment:
+      - NEXT_PUBLIC_API_URL=/api
+    expose:
+      - "3000"
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "http://week5-todo.local:3000"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+      start_period: 5s
+
+  nginx:
+    image: nginx:alpine
+    container_name: week5-todo-nginx
+    depends_on:
+      backend:
+        condition: service_healthy
+      frontend:
+        condition: service_healthy
+    ports:
+      - "8080:80"
+      - "8443:443"
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/conf.d/default.conf:ro
+      - ./nginx/certs:/etc/nginx/certs:ro
+
+volumes:
+  week5-mongo-data:
