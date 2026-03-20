@@ -8,7 +8,7 @@ from src.utils.loader import load_documents
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 CHUNK_DIR = os.path.join(BASE_DIR, "data", "chunks")
 
-CHUNK_SIZE = 600 
+CHUNK_SIZE = 500
 CHUNK_OVERLAP = 100
 CHUNKS_PATH = os.path.join(CHUNK_DIR, "chunks.json")
 

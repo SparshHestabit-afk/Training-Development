@@ -1,0 +1,7 @@
+# provider: gemini
+# model_name: gemini-2.0-flash
+# api_key_env: GOOGLE_API_KEY
+
+provider: groq
+model_name: llama-3.3-70b-versatile
+api_key_env: GROQ_API_KEY

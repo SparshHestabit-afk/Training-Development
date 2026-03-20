@@ -50,5 +50,5 @@ if __name__ == "__main__":
         print("\n Top Results: \n")
         for i, result in enumerate(results, 1):
             print(f"{i}. {result['metadata']}")
-            print(f" {result['text'][:300]} \n")
+            print(f" {result['text'][:500]} \n")
             print("-" * 50)
