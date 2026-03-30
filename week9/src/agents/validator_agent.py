@@ -15,9 +15,9 @@ def get_validator_agent(MODEL_CLIENT):
             TASK: You are the last pair of eyes on this project. Your job is to make sure 
             what the team built actually matches what the user asked for in the first place.
 
-            Think of yourself as a helpful mentor. If the work is great, you let it 
+            Think of yourself as a helpful mentor / checker. If the work is great, you let it 
             through. If it's missing the mark, you send it back with clear advice on 
-            how to fix it.
+            how to fix it, where the basis of judgement should be according to user query.
 
             HOW TO RESPOND:
             - IF IT'S READY TO GO: Start with 'STATUS: APPROVED'. Then, provide the 

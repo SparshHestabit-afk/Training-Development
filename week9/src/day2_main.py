@@ -10,7 +10,7 @@ from autogen_ext.models.openai import OpenAIChatCompletionClient
 from autogen_agentchat.messages import TextMessage
 
 # Import agents
-from agents.planner_agent import get_planner_agent
+from orchestrator.planner_agent import get_planner_agent
 from agents.worker_agent import get_worker_agent
 from agents.refiner_agent import get_refiner_agent
 from agents.validator_agent import get_validator_agent
@@ -59,7 +59,7 @@ async def main():
 
         try:
             # PHASE 1: PLANNING (The Architect)
-            print(f"\n[1/4] ARCHITECT: Drafting strategic plan...")
+            print(f"\n[1/4] PLANNER: Drafting strategic plan...")
             s1 = time.perf_counter()
             plan_res = await planner.on_messages([TextMessage(content=user_query, source="user")], None)
             plan_text = plan_res.chat_message.content
@@ -72,22 +72,27 @@ async def main():
 
             missions = re.findall(r"\[MISSION\]:.*", plan_text)
             if not missions:
-                print("Planner Error: No valid missions identified in blueprint.")
+                print("Planner Error: No valid missions identified in planner.")
                 continue
-                
             print(f"Planning completed in {e1-s1:.2f}s. {len(missions)} tasks found.")
 
-            # PHASE 2: EXECUTION (The Specialists)
-            print(f"\n[2/4] WORKERS: Executing missions (tasks) in parallel...")
+            # PHASE 2: EXECUTION (The Workers)
+            print(f"\n[2/4] WORKERS: Executing tasks in parallel...")
             sw = time.perf_counter()
+            # creating asynchronous tasks , where each task or mission, gets its own worker agent , 
+            # and they all are then stored in a list, where tasks are passed as structured messages using Text_Messages
+            # we are creating subroutines by not calling await, because async needs await for execution
             worker_tasks = [
                 worker.on_messages([TextMessage(content=m, source="planner")], None)
-                for m in missions
+                for m in missions #lsit of the tasks, created by the planner
             ]
+            # performing parallel execution on the list of async task, with assigned worker agent
+            # (*) it's the unpacking operator, which unwraps the pending tasks
+            #this execution starts all the worker agents for async tasks at the same time
             worker_results = await asyncio.gather(*worker_tasks)
             worker_contents = [r.chat_message.content for r in worker_results]
             
-            # Print Raw Specialist Data for transparency
+            # Printing Raw Specialist Data
             for i, content in enumerate(worker_contents):
                 print(f"--- WORKER {i+1} DATA ---\n{content.strip()}\n")
             
@@ -96,19 +101,21 @@ async def main():
             # PHASE 3: REFINEMENT (The Editor)
             print(f"\n[3/4] EDITOR: Weaving and polishing raw data...")
             sr = time.perf_counter()
+            # this is the aggregator part of the workflow, where multiple responses from the worker agent, respecively for each 
+            # task , is taken in, and after aggragating or joining all the response, a single big response is generated, for upcoming agents
+            # here user query is for identifying and remembering the original goal, it is here, so that our response can be validated and check relevance.
             refine_input = f"User Request: {user_query}\n\nWorker Data:\n" + "\n\n".join(worker_contents)
-            refine_res = await refiner.on_messages([TextMessage(content=refine_input, source="workers")], None)
+            refine_res = await refiner.on_messages([TextMessage(content=refine_input, source="worker")], None)
             final_draft = refine_res.chat_message.content
             
             print("-" * 40)
             print("REFINER'S POLISHED DRAFT:")
             print(final_draft.strip())
             print("-" * 40)
-            
             print(f"Refinement finished in {time.perf_counter()-sr:.2f}s.")
 
             # PHASE 4: VALIDATION (The Mentor)
-            print(f"\n[4/4] VALIDATION MENTOR: Reviewing final quality...")
+            print(f"\n[4/4] VALIDATION: Reviewing final quality...")
             sv = time.perf_counter()
             val_res = await validator.on_messages([TextMessage(content=final_draft, source="refiner")], None)
             verdict = val_res.chat_message.content
@@ -129,4 +136,7 @@ async def main():
     await model_client.close()
 
 if __name__ == "__main__":
-    asyncio.run(main())
+    try:
+        asyncio.run(main()) # running or main execution in asnychronous mode for non-blocking execution
+    except KeyboardInterrupt:
+        sys.exit(0)

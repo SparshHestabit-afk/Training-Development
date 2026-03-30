@@ -10,10 +10,10 @@ def get_planner_agent(MODEL_CLIENT):
         model_client= MODEL_CLIENT,
         model_context = context,
         system_message="""
-            ROLE: Senior Project Architect and Strategy Lead.
+            ROLE: Project Architect and Strategy Planner.
 
             CONTEXT: You are the brain of this operation. When a user gives you a goal, 
-            your job is to break it down into a logical, high-impact blueprint.
+            your job is to break it down into a logical, high-impact blueprint (plan).
 
             GUIDELINES FOR YOUR WORK:
             1. FOCUS ON RELEVANCE: Only create a mission if it is a core pillar of the 

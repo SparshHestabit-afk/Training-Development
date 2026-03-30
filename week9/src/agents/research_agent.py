@@ -1,8 +1,8 @@
 # from modern autogen_agentchat library we are importing AssistantAgent Class , 
-# which actually is a blank wrapper.
+# which actually is a blank wrapper, which is used to basically create an ai agent.
 from autogen_agentchat.agents import AssistantAgent
 # from modern autogen.core library we are importing BufferedChatCompletionContext method,
-# whisch is implementing sliding window, where we define the buffer size, which is actually no. of chat/response it remembers, and forgets the rest 
+# which is implementing sliding context window, where we define the buffer size, which is actually no. of chat/response it remembers, and forgets the rest 
 from autogen_core.model_context import BufferedChatCompletionContext
 
 # MODEL_CLIENT is the configuration of our local LLM (qwen 2.5), which we are not defining it here, 
