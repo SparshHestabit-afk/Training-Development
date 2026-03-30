@@ -6,9 +6,7 @@ from tools.file_agent import FileAgent
 from tools.code_agent import CodeAgent
 from tools.db_agent import DBAgent
 
-# =========================
 # SETUP
-# =========================
 load_dotenv()
 client = Groq()
 MODEL_NAME = "llama-3.3-70b-versatile"
@@ -19,9 +17,7 @@ AGENTS = {
     "db_agent": DBAgent()
 }
 
-# =========================
 # PROMPTS
-# =========================
 PLANNER_PROMPT = """
 You are an AI planner.
 
@@ -101,9 +97,7 @@ Final:
 }
 """
 
-# =========================
 # UTIL
-# =========================
 def call_llm(messages):
     res = client.chat.completions.create(
         model=MODEL_NAME,
@@ -123,10 +117,7 @@ def clean_output(text):
 def is_code_output(text):
     return "def " in text or "import " in text
 
-
-# =========================
 # PLANNER
-# =========================
 def create_plan(query):
 
     # Code-only query → skip tools
@@ -139,11 +130,10 @@ def create_plan(query):
     ])
 
     raw = clean_output(raw)
-
     try:
         plan = json.loads(raw)
 
-        # 🔥 FIX: string inside list
+        # FIX: string inside list
         if isinstance(plan, list) and len(plan) > 0 and isinstance(plan[0], str):
             plan = [json.loads(plan[0])]
 
@@ -167,15 +157,10 @@ def create_plan(query):
             "args": {"task": query}
         }]
 
-
-# =========================
 # TOOL LOOP
-# =========================
 def execute_with_loop(plan, query):
 
-    # =========================
     # CODE-ONLY CASE
-    # =========================
     if not plan:
         print("\n[INFO] Code-only task detected")
 
@@ -194,9 +179,7 @@ def execute_with_loop(plan, query):
 
     results = []
 
-    # =========================
-    # 🔥 JSON EXTRACTOR (FINAL)
-    # =========================
+    # JSON EXTRACTOR (FINAL)
     def extract_json(text):
         start = text.find("{")
         if start == -1:
@@ -214,9 +197,7 @@ def execute_with_loop(plan, query):
 
         return None
 
-    # =========================
     # LOOP
-    # =========================
     for step in range(10):
 
         print(f"\n[STEP {step+1}]")
@@ -227,28 +208,22 @@ def execute_with_loop(plan, query):
         print("\n[LLM OUTPUT]")
         print(content)
 
-        # =========================
-        # 🔥 PARSE OUTPUT (FIXED)
-        # =========================
+        # PARSE OUTPUT (FIXED)
         json_str = extract_json(content)
 
         if not json_str:
-            return [f"❌ No valid JSON found:\n{content}"]
+            return [f"No valid JSON found:\n{content}"]
 
         try:
             action = json.loads(json_str)
         except Exception as e:
-            return [f"❌ Invalid JSON:\n{json_str}\nError: {str(e)}"]
+            return [f"Invalid JSON:\n{json_str}\nError: {str(e)}"]
 
-        # =========================
         # FINAL RESPONSE
-        # =========================
         if action.get("action") == "final":
             return results + [action.get("answer")]
 
-        # =========================
         # TOOL EXECUTION
-        # =========================
         if action.get("action") == "tool" or "agent" in action:
 
             # normalize formats like "code_agent.run_python"
@@ -262,7 +237,7 @@ def execute_with_loop(plan, query):
 
             # block invalid agents
             if agent_name not in AGENTS:
-                return [f"❌ Unknown agent: {agent_name}"]
+                return [f" Unknown agent: {agent_name}"]
 
             # fix misuse
             if agent_name == "code_agent" and tool_action == "create_file":
@@ -283,16 +258,14 @@ def execute_with_loop(plan, query):
                     MODEL_NAME
                 )
             except Exception as e:
-                return [f"❌ Tool failed: {e}"]
+                return [f"Tool failed: {e}"]
 
             print("\n[TOOL RESULT]")
             print(result)
 
             results.append(result)
 
-            # =========================
             # SPECIAL: PY FILE HANDLING
-            # =========================
             if tool_action == "create_file" and args.get("filename", "").endswith(".py"):
 
                 code = call_llm([
@@ -315,9 +288,7 @@ def execute_with_loop(plan, query):
 
                 return [result, write_result]
 
-            # =========================
             # FEEDBACK LOOP
-            # =========================
             messages.append({"role": "assistant", "content": json_str})
             messages.append({
                 "role": "system",
@@ -325,12 +296,10 @@ def execute_with_loop(plan, query):
             })
 
         else:
-            return ["❌ Invalid action format"]
+            return ["Invalid action format"]
 
-    return ["⚠️ Max steps reached"]
-# =========================
+    return ["Max steps reached"]
 # RUN
-# =========================
 def run(query):
 
     print("\n[PLANNING]")
@@ -345,10 +314,7 @@ def run(query):
 
     return result
 
-
-# =========================
 # CLI
-# =========================
 if __name__ == "__main__":
 
     print("Day-3 Tool Agent (Final Stable System)")

@@ -23,15 +23,11 @@ from agents.optimizer_agent import get_optimizer
 from agents.validator_agent import get_validator
 from agents.reporter_agent import get_reporter
 
-# =========================
 # INITIALIZING 
-# =========================
 memory = MemoryManager() if ENABLE_MEMORY else None
 log_buffer = []
 
-# =========================
 # LOGGING FUNCTIONS
-# =========================
 def log_step(step, content):
     if ENABLE_LOGGING:
         log_buffer.append(f"\n[{step}]\n{content}\n")
@@ -42,15 +38,11 @@ def save_log():
         with open(file_path, "w") as f:
             f.write("\n".join(log_buffer))
 
-# =========================
 # UTIL (TOKEN LIMITING)
-# ========================
 def trim(text, max_chars=2000):
     return text[-max_chars:] if text else ""
 
-# =========================
 # INTENT CLASSIFIER (FOR user query )
-# =========================
 def classify_intent(query):
     q = query.lower()
 
@@ -68,9 +60,7 @@ def classify_intent(query):
 
     return "task"
 
-# =========================
 # MEMORY ENHANCEMENT
-# =========================
 def enrich_memory(query):
     data = {}
 
@@ -80,9 +70,7 @@ def enrich_memory(query):
 
     return data
 
-# =========================
 # DEFINING TOOL SYSTEM
-# =========================
 def build_tools(query=None):
     if not ENABLE_TOOLS:
         return None
@@ -124,9 +112,7 @@ def build_agents(query=None):
         "Reporter": get_reporter(MODEL_CLIENT),
     }
 
-# =========================
 # MAIN ENGINE
-# =========================
 async def run_query(query):
 
     print("\nNEXUS AI STARTED...")
@@ -134,9 +120,7 @@ async def run_query(query):
     agents = build_agents(query)
     original_query = query
 
-    # =========================
     # MEMORY CONTEXT
-    # =========================
     if memory:
         print("\n[MEMORY] Retrieving context...")
         messages = memory.retrieve(original_query)
@@ -151,9 +135,7 @@ async def run_query(query):
             {memory_context}
         """
 
-    # =========================
     # ORCHESTRATOR CALLING
-    # =========================
     print("\n[ORCHESTRATOR] Generating sequence...")
 
     result = await agents["Orchestrator"].run(task=query)
