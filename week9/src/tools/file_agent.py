@@ -1,35 +1,13 @@
 import os
-import json
-import pandas as pd
 
 BASE_DIR = "src/files"
 
 class FileAgent:
 
-    SYSTEM_PROMPT = """
-        You are file_agent.
-        ROLE:
-        File system operations specialist.
-        CAPABILITIES:
-        - create, read, write, delete files
-        - list directories
-        - check file existence
-        RULES:
-        1. Only operate inside 'src/files/' directory
-        2. Never access outside paths
-        3. Always normalize paths
-        4. Always ensure directory exists before writing
-        5. Never generate content yourself
-        BEHAVIOR:
-        - deterministic
-        - no hallucination
-    """
-
     # PATH CLEANING
     def _clean_path(self, path):
         if not path:
             return None
-
         path = path.strip()
         # Remove any absolute or repeated prefixes
         path = path.replace("src/files/", "")
@@ -41,7 +19,6 @@ class FileAgent:
     # FILE TYPE ROUTING
     def _get_category(self, filename):
         ext = filename.split(".")[-1].lower()
-
         if ext == "py":
             return "codes"
         elif ext == "csv":
@@ -78,7 +55,8 @@ class FileAgent:
         action = step.get("action")
         args = step.get("args", {})
 
-        args.pop("content", None) if action == "create_file" else None
+        if action == "create_file":
+            args.pop("content", None)
         if not hasattr(self, action):
             return f"Invalid file_agent action: {action}"
         try:
@@ -87,7 +65,6 @@ class FileAgent:
             return f"Execution error: {str(e)}"
 
     # FILE OPERATIONS
-
     def create_file(self, path=None, filename=None):
         full_path = self._resolve_full_path(path, filename)
         if os.path.exists(full_path):

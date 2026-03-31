@@ -1,4 +1,5 @@
 import json
+import re
 from groq import Groq
 from dotenv import load_dotenv
 
@@ -10,94 +11,70 @@ from tools.db_agent import DBAgent
 load_dotenv()
 client = Groq()
 MODEL_NAME = "llama-3.3-70b-versatile"
-
+#  creating an agent registry, for planner to choose agent based on task
 AGENTS = {
     "file_agent": FileAgent(),
     "code_agent": CodeAgent(),
     "db_agent": DBAgent()
 }
 
-# PROMPTS
+# this functionality is used for dynamic name fetching for databsae, based on user query, where it removes symbols, numbers, and common words, 
+# to extract main database, which is then used for name resolution and connection, where user doesn't have to specify db name explicitly, 
+def get_main_entity(query):
+    query = query.lower()
+    words = re.findall(r"[a-zA-Z]+", query) # extract all words
+    action_words = {
+        "create", "insert", "select", "update", "delete", "drop", "show" # remove action words FIRST (important)
+    }
+    words = [w for w in words if w not in action_words]
+    stopwords = {
+        "table", "into", "from", "for", "a", "db", "database", "data" # remove other noise
+    }
+    words = [w for w in words if w not in stopwords]  # checks if all the words are not stopwords, if not then keep it, otherwise remove it
+    if not words:
+        return None
+    return "_".join(words[:2]) # take first 2 clear words for naming convention, and join with underscore, resulting in database name
+
+# PLANNER PROMPT (using JSON for clear structure, as it generates a plan in a sequential manner, prevents hallucination)
 PLANNER_PROMPT = """
-You are an AI planner.
+        You are an AI planner. Return ONLY a JSON array.
 
-STRICT RULES:
+        FORMAT:
+        [{"agent": "...", "action": "...", "args": {...}}] 
 
-- Return ONLY a JSON array
-- NO explanation
-- NO markdown
+        AGENTS:
+        - code_agent: run_python
+        - file_agent: create_file, write_file, read_file
+        - db_agent: execute_sql
 
-FORMAT:
+        ROUTING:
+        - SQL → db_agent
+        - CSV/Python → code_agent
+        - Files → file_agent
 
-[
-  {
-    "agent": "code_agent",
-    "action": "run_python",
-    "args": {"task": "..."}
-  }
-]
+        DB:
+        - SQLite only, use PRAGMA table_info for schema
+        - Use real column names and values (no '?')
 
-VALID AGENTS:
-- file_agent
-- code_agent
-- db_agent
+        CSV → DB:
+        - ONLY if explicitly requested
+        - Use pandas + sqlite3 (no SQLAlchemy)
+        - CSV: src/files/data/<file>
+        - DB: src/files/databases/<name>.db
 
-VALID ACTIONS:
+        CODE:
+        - Executable Python only
+        - No unnecessary functions
 
-code_agent:
-- run_python
-
-file_agent:
-- create_file
-- write_file
-- read_file
-
-db_agent:
-- execute_sql
-
-CRITICAL:
-- NEVER use custom function names
-- NEVER return "code_agent.run_python"
-- NEVER return strings
-- NEVER return unknown agents like "data_agent"
-- ALWAYS return structured JSON objects
-
-RULES:
-
-1. CSV → use code_agent.run_python
-2. Python file → file_agent
-3. SQL → db_agent
-4. If unsure → code_agent.run_python
-"""
-
-EXECUTION_PROMPT = """
-You are an execution agent.
-
-STRICT RULES:
-
-- ONLY return JSON
-- NO explanation
-- NO markdown
-- NO ``` blocks
-
-FORMAT:
-
-Tool:
-{
-  "action": "tool",
-  "agent": "...",
-  "tool_action": "...",
-  "args": {}
-}
-
-Final:
-{
-  "action": "final",
-  "answer": "..."
-}
-"""
+        STRICT:
+        - No explanations
+        - Valid JSON only
+    """
 
 # UTIL
+# this a simple reusable funciton, which calls the llm with a given message, and returns the response,
+#  this is used in multiple places in the code, for better code organization and reusability, and also to 
+# have a single place to modify if we want to change the way we call the llm in future
 def call_llm(messages):
     res = client.chat.completions.create(
         model=MODEL_NAME,
@@ -106,202 +83,218 @@ def call_llm(messages):
     )
     return res.choices[0].message.content.strip()
 
-
+# cleaning because llm often return a formatted response with md , so it cleans that to make it executable
 def clean_output(text):
     text = text.replace("```python", "")
     text = text.replace("```", "")
     text = text.replace("<|python_tag|>", "")
     return text.strip()
 
+# this function is responsible for building user messaege, incase of sql query , where we want to pass the schema of 
+# the database as context to llm, so it can generate better plan and code, this is done by extracting main entity from query,
+# then fetching schema using PRAGMA, and then appending that to user message with instructions.
+def build_user_message(query):
+    schema_text = ""
+    try:
+        entity = get_main_entity(query)
+        if entity:
+            db_agent = AGENTS["db_agent"] # this calls the db_agent to connect to the database,.
 
-def is_code_output(text):
-    return "def " in text or "import " in text
+            # ensure DB connection, to access the schema for the connected database
+            db_agent.connect(f"{entity}.db")
+            schema = db_agent.execute_sql(f"PRAGMA table_info({entity})") # PRAGMA is a command, which return the metadata about the table
+
+            if schema.get("success") and schema.get("result"):
+                cols = [col["name"] for col in schema["result"]] # create a list of columns, extracting only name from the metadata
+                schema_text = f"Table: {entity}\nColumns: {', '.join(cols)}" # foramtted schema, which has the name of all the columns in the table
+
+    except Exception:
+        # fail silently (important as it doesn't break the code)
+        pass
+    # FINAL USER MESSAGE (building the context for the llm, to understand the query better, and plan according to it
+    user_message = f"User Query:\n{query}"
+
+    if schema_text:
+        user_message += f"""
+            Database Context:
+            {schema_text}
+
+            Instructions:
+            - Use this schema only if relevant
+            - Do NOT invent column names
+            - Avoid inserting primary keys or ID columns unless needed
+        """
+    return user_message
 
 # PLANNER
 def create_plan(query):
-
-    # Code-only query → skip tools
+    # Code-only query → skip tools (bypass planning and go straight to code execution)
     if "code" in query.lower() and "file" not in query.lower():
         return []
+    
+    user_message = build_user_message(query) # final message with schema context if available, otherwise just user query
 
     raw = call_llm([
         {"role": "system", "content": PLANNER_PROMPT},
-        {"role": "user", "content": query}
+        {"role": "user", "content": user_message}
     ])
 
-    raw = clean_output(raw)
+    raw = clean_output(raw) # cleaning the response to make it executable, removing any formatting or md tags
     try:
-        plan = json.loads(raw)
-
+        plan = json.loads(raw) # converting to make it python ready
         # FIX: string inside list
-        if isinstance(plan, list) and len(plan) > 0 and isinstance(plan[0], str):
+        if isinstance(plan, list) and len(plan) > 0 and isinstance(plan[0], str): # ensures the plan is in correct format, where the first element is not string , so that it can be parser into json object
             plan = [json.loads(plan[0])]
 
-        # validate structure
-        if not isinstance(plan, list):
+        # validate structure (ensures that the plan is in correct format, LIST)
+        if not isinstance(plan, list): 
             raise ValueError
 
+        # validates each step in the plan, to ensure it has all the needed fields, and is in correct format
         for step in plan:
             if not isinstance(step, dict):
                 raise ValueError
             if "agent" not in step or "action" not in step:
                 raise ValueError
 
-        return plan
+        return plan #return the final structure plan, which is a list of steps, where each step is a dictionary with agent, action and args
 
-    except:
-        # fallback
+    except Exception:
+        # fallback (in case of plan parsing failure , it return a default plan)
         return [{
             "agent": "code_agent",
             "action": "run_python",
             "args": {"task": query}
         }]
 
-# TOOL LOOP
+# EXECUTION
 def execute_with_loop(plan, query):
-
     # CODE-ONLY CASE
     if not plan:
         print("\n[INFO] Code-only task detected")
-
+        # calling llm to generate code for the given query
         code = call_llm([
             {"role": "system", "content": "Return ONLY Python code"},
             {"role": "user", "content": query}
         ])
+        return [clean_output(code)] # returning the cleaned code as final response in a list format for consistency with tool-based output
 
-        return [clean_output(code)]
+    results = [] # list to store outputs from each step
 
-    messages = [
-        {"role": "system", "content": EXECUTION_PROMPT},
-        {"role": "system", "content": f"PLAN:\n{plan}"},
-        {"role": "user", "content": query}
-    ]
+    for idx, step in enumerate(plan):
+        print(f"\n[STEP {idx+1}]")
+        print("\n[PLAN STEP]")
+        print(step)
 
-    results = []
+        # fetches the needed parameters for tool execution, using ,get to avoid key error
+        agent_name = step.get("agent")
+        action = step.get("action")
+        args = step.get("args", {})
 
-    # JSON EXTRACTOR (FINAL)
-    def extract_json(text):
-        start = text.find("{")
-        if start == -1:
-            return None
+        # Central DB routing logic (if SQL detected but no db_name provided)
+        entity = get_main_entity(query)
+        if "db_name" not in args:
+            if "database" in args:
+                args["db_name"] = args["database"]
+            elif entity: # in case db does not exist, it creates a new db automatically
+                args["db_name"] = f"{entity}.db"
 
-        stack = 0
-        for i in range(start, len(text)):
-            if text[i] == "{":
-                stack += 1
-            elif text[i] == "}":
-                stack -= 1
+        # STRICT VALIDATION (in case of llm creating a new agent)
+        if agent_name not in AGENTS:
+            return [f"Unknown agent: {agent_name}"]
 
-            if stack == 0:
-                return text[start:i+1]
+        agent = AGENTS[agent_name]
 
-        return None
-
-    # LOOP
-    for step in range(10):
-
-        print(f"\n[STEP {step+1}]")
-
-        raw = call_llm(messages)
-        content = clean_output(raw)
-
-        print("\n[LLM OUTPUT]")
-        print(content)
-
-        # PARSE OUTPUT (FIXED)
-        json_str = extract_json(content)
-
-        if not json_str:
-            return [f"No valid JSON found:\n{content}"]
+        print(f"\n[TOOL CALL] {agent_name} → {action}") # defining which agent and action is being called
 
         try:
-            action = json.loads(json_str)
+            result = agent.handle_task( # calls agent to perform action
+                {"action": action, "args": args},
+                query,
+                client,
+                MODEL_NAME
+            )
         except Exception as e:
-            return [f"Invalid JSON:\n{json_str}\nError: {str(e)}"]
+            return [f"Tool failed: {e}"]
 
-        # FINAL RESPONSE
-        if action.get("action") == "final":
-            return results + [action.get("answer")]
+        print("\n[TOOL RESULT]")
+        print(result)
 
-        # TOOL EXECUTION
-        if action.get("action") == "tool" or "agent" in action:
+        results.append(result) # adding it to the list of output from each step
 
-            # normalize formats like "code_agent.run_python"
-            if "." in str(action.get("action")):
-                agent_name, tool_action = action["action"].split(".")
-            else:
-                agent_name = action.get("agent")
-                tool_action = action.get("tool_action")
+        # SPECIAL: PY FILE HANDLING (it creates a .py file, with code in it)
+        if action == "create_file" and args.get("filename", "").endswith(".py"):
+            code = call_llm([
+                {"role": "system", "content": "Return ONLY Python code"},
+                {"role": "user", "content": query}
+            ])
 
-            args = action.get("args", {})
+            file_agent = AGENTS["file_agent"] # calls the file agent to write the generated code into the file
 
-            # block invalid agents
-            if agent_name not in AGENTS:
-                return [f" Unknown agent: {agent_name}"]
+            write_result = file_agent.handle_task({
+                "action": "write_file",
+                "args": {
+                    "filename": args["filename"],
+                    "content": clean_output(code)
+                }
+            }, query, client, MODEL_NAME)
 
-            # fix misuse
-            if agent_name == "code_agent" and tool_action == "create_file":
-                agent_name = "file_agent"
+            print("\n[CODE WRITTEN]")
+            print(write_result)
 
-            if tool_action == "create_file":
-                args.pop("content", None)
+            return [result, write_result] # returns both the file creation result and code writing result as final output
 
-            agent = AGENTS[agent_name]
+    return results # returns the list of outputs from all the steps in the plan as final output
 
-            print(f"\n[TOOL CALL] {agent_name} → {tool_action}")
+def is_analysis_query(query): # checks if the query is related to analysis or insights
+    keywords = [
+        "analyze", "analysis", "insight",
+        "pattern", "trend", "correlation",
+        "summary", "statistics"
+    ]
+    return any(word in query.lower() for word in keywords)
 
-            try:
-                result = agent.handle_task(
-                    {"action": tool_action, "args": args},
-                    query,
-                    client,
-                    MODEL_NAME
-                )
-            except Exception as e:
-                return [f"Tool failed: {e}"]
+def generate_insights(data): # function for creating the insights from the analysis output
+    prompt = f"""
+        You are a data analyst.
 
-            print("\n[TOOL RESULT]")
-            print(result)
+        The following is raw analysis output:
+        {data}
 
-            results.append(result)
+        Your job is to:
+        - Extract meaningful patterns ONLY
+        - Ignore incorrect, trivial, or misleading statements
+        - Ignore any references to ID-like fields
+        - Ignore generic correlation statements
 
-            # SPECIAL: PY FILE HANDLING
-            if tool_action == "create_file" and args.get("filename", "").endswith(".py"):
+        Generate 3–5 high-quality insights.
 
-                code = call_llm([
-                    {"role": "system", "content": "Return ONLY Python code"},
-                    {"role": "user", "content": query}
-                ])
+        Rules:
+        - Do NOT repeat input text
+        - Do NOT mention "correlation between X and Y"
+        - Focus on real-world meaning and implications
+        - Avoid assumptions if data is unclear
 
-                file_agent = AGENTS["file_agent"]
+        Output:
+        Top Insights:
+        1. ...
+        2. ...
+        3. ...
+        """
 
-                write_result = file_agent.handle_task({
-                    "action": "write_file",
-                    "args": {
-                        "filename": args["filename"],
-                        "content": clean_output(code)
-                    }
-                }, query, client, MODEL_NAME)
+    return call_llm([
+        {
+            "role": "system",
+            "content": "You are a data analyst generating high-quality insights."
+        },
+        {
+            "role": "user",
+            "content": prompt
+        }
+    ])
 
-                print("\n[CODE WRITTEN]")
-                print(write_result)
-
-                return [result, write_result]
-
-            # FEEDBACK LOOP
-            messages.append({"role": "assistant", "content": json_str})
-            messages.append({
-                "role": "system",
-                "content": f"Tool result:\n{result}"
-            })
-
-        else:
-            return ["Invalid action format"]
-
-    return ["Max steps reached"]
 # RUN
 def run(query):
-
     print("\n[PLANNING]")
     plan = create_plan(query)
     print(plan)
@@ -309,20 +302,36 @@ def run(query):
     print("\n[EXECUTION]")
     result = execute_with_loop(plan, query)
 
+    if is_analysis_query(query):
+        print("\n=== INSIGHTS ===")
+
+        # extract last meaningful output
+        final = result[-1] if isinstance(result, list) else result # retrieves the last output from the list , as it is the final output for our query
+
+        if isinstance(final, dict): # tries to extract the main data from the final output, which can vary from agent to agent
+            data = final.get("output") or final.get("result") or str(final)
+        else:
+            data = str(final) # if final output is not a dict, it converts it to string for insight generation
+
+        try:
+            insights = generate_insights(data) # calls the insight generation fucntion to create insights from the final output
+            print(insights)
+        except Exception as e:
+            print(f"Insight generation failed: {e}")
+            print("\n=== RAW OUTPUT ===")
+            print(result) # incase it fails, it give the final output witout insights
+
+
     print("\n=== FINAL OUTPUT ===")
-    print(result)
+    print(result) # final response in the form of list of outputs from each step
 
     return result
 
 # CLI
 if __name__ == "__main__":
-
-    print("Day-3 Tool Agent (Final Stable System)")
-
+    print("Day-3 Tool Agent System")
     while True:
         q = input("\n>> ")
-
         if q.lower() == "exit":
             break
-
         run(q)
