@@ -153,7 +153,7 @@ async def run_query(query):
                 raise ValueError
         except:
             print("Orchestrator fallback triggered....!!")
-            agent_sequence = ["Planner", "Analyst", "Validator", "Reporter"]
+            agent_sequence = ["Planner", "Researcher", "Analyst", "Validator", "Reporter"]
 
     # filter valid agents
     valid_agents = {
@@ -173,9 +173,7 @@ async def run_query(query):
     if "code" not in original_query.lower():
         agent_sequence = [a for a in agent_sequence if a != "Coder"]
 
-    # =========================
     # EXECUTION LOOP
-    # =========================
     context = query
     attempt = 0
 
@@ -184,7 +182,6 @@ async def run_query(query):
         print(f"\n Attempt {attempt+1}")
 
         for agent_name in agent_sequence:
-
             agent = agents.get(agent_name)
             if not agent:
                 continue
@@ -228,9 +225,7 @@ async def run_query(query):
         else:
             break
 
-    # =========================
     # FINAL RESPONSE
-    # =========================
     print("\n[REPORTER] Generating final output...")
 
     result = await agents["Reporter"].run(
@@ -277,9 +272,7 @@ if __name__ == "__main__":
 
         intent = classify_intent(q)
 
-        # =========================
         # MEMORY STORE
-        # =========================
         if intent == "memory":
             print("\nMemory detected")
 
@@ -293,9 +286,7 @@ if __name__ == "__main__":
             print("Got it! I'll remember that.")
             continue
 
-        # =========================
         # MEMORY QUERY (GENERIC)
-        # =========================
         if intent == "memory_query":
             print("\n Memory Query Detected")
 
@@ -321,9 +312,7 @@ if __name__ == "__main__":
                 print(result.messages[-1].content)
             continue
 
-        # =========================
         # SIMPLE (for instant reply to simple query/questions)
-        # =========================
         if intent == "simple":
             print("\n⚡ Simple query detected")
             agents = build_agents(q)
