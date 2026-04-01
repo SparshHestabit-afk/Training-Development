@@ -1,7 +1,5 @@
-# using class for better encapsulation, as it helps with state management, keeping(state+behavior)
-# 
+# using class for better encapsulation, as it helps with state management, keeping(state+behavior) 
 class SessionMemory:
-
     def __init__(self, max_history=10):
         self.history = [] # storing conversation (chat history)
         self.max_history = max_history # it is used for context window, to limit the number of messages being kept
@@ -11,12 +9,11 @@ class SessionMemory:
     def add(self, role, content):
         if not content:
             return
-
+        
         self.history.append({
             "role": role,
             "content": str(content).strip()
         })
-
         # Keeping last N interactions, implemeting a context window, where only N last messages are kept,
         # rest flows out of window, maintaining the window size
         if len(self.history) > self.max_history:
@@ -37,11 +34,9 @@ class SessionMemory:
     # this is used to update the context, based on the relevance, for the final system prompt
     def update_context(self, messages):
         context = self.get_context() # retrieves the last or previous chat
-
         if not context:
             return messages
-
-        # this wrappes the retrieved chat into a structured message, with stating this is a previous chat , nothing new
+        # this wrapes the retrieved chat into a structured message, with stating this is a previous chat , nothing new
         memory_message = {
             "role": "system",
             "content": f"Recent Conversation:\n{context}"

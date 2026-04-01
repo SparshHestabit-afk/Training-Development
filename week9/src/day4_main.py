@@ -71,8 +71,7 @@ def handle_clear_command(command):
         return "Invalid clear command. Use: clear session / clear long / clear vector / clear all"
 
 # MEMORY PIPELINE
-def run(query):
-
+def run(query): 
     print("\n[MEMORY SEARCH]")
     # this is a structred base message, used for better LLM understanding
     messages = [
@@ -85,7 +84,6 @@ def run(query):
             "content": query
         }
     ]
-
     messages = session_memory.update_context(messages) # retrieving context from session memory (gives continuity to conversation)
     messages = vector_store.update_context(messages, query) # retrieving context from vector memory using similarity searching (gives semantic recall)
     messages = long_memory.update_context(messages, query) # retrieving context from long_term memory (gives user personlization)
@@ -99,7 +97,7 @@ def run(query):
     session_memory.add("user", query)
     session_memory.add("assistant", response)
 
-    #stores only the needed or impotant facts in memory, that is semantic memory 
+    #stores only the needed or impotant facts in memory, that is epsodic and semantic memory 
     important_memory = extract_important_memory(query, response)
     if important_memory:
         vector_store.add(important_memory)
@@ -108,11 +106,9 @@ def run(query):
 
 # CLI
 if __name__ == "__main__":
-
     print("Memory System Ready")
-
     while True:
-        q = input("\n>> ").strip().lower()
+        q = input("\n>> ").strip()
         # Exit
         if q == "exit":
             break

@@ -28,7 +28,7 @@ def get_main_entity(query):
     }
     words = [w for w in words if w not in action_words]
     stopwords = {
-        "table", "into", "from", "for", "a", "db", "database", "data" # remove other noise
+        "table", "into", "from", "for", "a", "db", "database", "data", "entries", "the", "all" # remove other noise
     }
     words = [w for w in words if w not in stopwords]  # checks if all the words are not stopwords, if not then keep it, otherwise remove it
     if not words:
@@ -55,6 +55,7 @@ PLANNER_PROMPT = """
         DB:
         - SQLite only, use PRAGMA table_info for schema
         - Use real column names and values (no '?')
+        - if inserting, when defined in the query , add N number of rows,
 
         CSV → DB:
         - ONLY if explicitly requested

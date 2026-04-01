@@ -49,6 +49,25 @@ class LongTermMemory:
         recent = self.get_recent(limit)
         return "\n".join(recent)
 
+    # UPDATING CONTEXT ( used for updating the context, based on the relevance of the memory, for the final system prompt, which include memory recall)
+    def update_context(self, messages, query):
+        long_memories = self.get_recent(limit=5)
+        user_profile = self.get_user_profile(limit=10)
+        combined = []
+
+        if user_profile:
+            combined.append(f"User Profile:\n{user_profile}")
+        if long_memories:
+            combined.append("Recent Long-Term Memory:\n" + "\n".join(long_memories))
+        if not combined:
+            return messages # not modifying the context, or input message
+
+        memory_message = { # creating a strucured message for the memory, to make it llm ready (system message/instruction)
+            "role": "system",
+            "content": "\n\n".join(combined)
+        }
+        return messages[:-1] + [memory_message] + [messages[-1]] # 'list sandwitch', where we ensure that llm reads the memory once, befoore generating any new response
+
     # COUNT MEMORY (a basic quick healthcheck, and as well as memory statistics, and counter(counting number of chat stored) ) 
     def count(self):
         cursor = self.conn.cursor()

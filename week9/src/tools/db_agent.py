@@ -78,7 +78,7 @@ class DBAgent:
                 stmt_lower = stmt.lower()
 
                 # SELECT queries
-                if stmt_lower.startswith(("select", "pragma", "with")): # these are the main retrieval queries which retuurn data
+                if stmt_lower.startswith(("select", "pragma")): # these are the main retrieval queries which retuurn data
                     rows = cursor.fetchall() # retrieves all the matching rows
                     last_result = [dict(row) for row in rows] # list of the response from the database, storing each row as dictionary for better readability and access, where column name is the key
                 # Other queries ( INSERT,UPDATE OR DELETE, command that changes' database state, mainly)

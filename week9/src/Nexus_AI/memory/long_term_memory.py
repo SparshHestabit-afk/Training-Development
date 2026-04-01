@@ -2,7 +2,7 @@ import sqlite3
 import os
 
 class LongTermMemory:
-
+    
     def __init__(self):
         # Path to the directory , where we are storing our memory
         BASE_DIR = os.path.dirname(os.path.abspath(__file__))
