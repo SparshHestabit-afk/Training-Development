@@ -24,7 +24,7 @@ def get_main_entity(query):
     query = query.lower()
     words = re.findall(r"[a-zA-Z]+", query) # extract all words
     action_words = {
-        "create", "insert", "select", "update", "delete", "drop", "show" # remove action words FIRST (important)
+        "create", "insert", "select", "update", "delete", "drop", "show", "analyse" # remove action words FIRST (important)
     }
     words = [w for w in words if w not in action_words]
     stopwords = {
@@ -228,7 +228,7 @@ def execute_with_loop(plan, query):
             code = call_llm([
                 {"role": "system", "content": "Return ONLY Python code"},
                 {"role": "user", "content": query}
-            ])
+            ])  
 
             file_agent = AGENTS["file_agent"] # calls the file agent to write the generated code into the file
 
@@ -258,7 +258,6 @@ def is_analysis_query(query): # checks if the query is related to analysis or in
 def generate_insights(data): # function for creating the insights from the analysis output
     prompt = f"""
         You are a data analyst.
-
         The following is raw analysis output:
         {data}
 
@@ -268,11 +267,11 @@ def generate_insights(data): # function for creating the insights from the analy
         - Ignore any references to ID-like fields
         - Ignore generic correlation statements
 
-        Generate 3–5 high-quality insights.
+        Generate 3–5 high-quality insights, unless number of insights is specified in query
 
         Rules:
         - Do NOT repeat input text
-        - Do NOT mention "correlation between X and Y"
+        - Do NOT mention "correlation between X and Y" or any other datafrane related generic statements
         - Focus on real-world meaning and implications
         - Avoid assumptions if data is unclear
 
@@ -281,8 +280,8 @@ def generate_insights(data): # function for creating the insights from the analy
         1. ...
         2. ...
         3. ...
-        """
-
+        
+    """
     return call_llm([
         {
             "role": "system",
@@ -321,7 +320,6 @@ def run(query):
             print(f"Insight generation failed: {e}")
             print("\n=== RAW OUTPUT ===")
             print(result) # incase it fails, it give the final output witout insights
-
 
     print("\n=== FINAL OUTPUT ===")
     print(result) # final response in the form of list of outputs from each step

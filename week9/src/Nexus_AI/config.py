@@ -6,8 +6,8 @@ from autogen_ext.models.openai import OpenAIChatCompletionClient
 # Nexus AI CORE CONFIGURATION
 load_dotenv()
 # 1. Initializing the MODEL_CLIENT (Optimized for Groq Llama-3)
-MODEL_NAME = "llama-3.3-70b-versatile"
-# MODEL_NAME = "llama-3.1-8b-instant"
+# MODEL_NAME = "llama-3.3-70b-versatile"
+MODEL_NAME = "llama-3.1-8b-instant"
 # Groq provides the high-speed inference required for (9-agents) orchestration
 
 MODEL_CLIENT = OpenAIChatCompletionClient(

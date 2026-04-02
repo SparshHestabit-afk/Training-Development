@@ -139,7 +139,7 @@ async def run_query(query):
     print("\n[ORCHESTRATOR] Generating sequence...")
 
     result = await agents["Orchestrator"].run(task=query)
-    raw_output = result.messages[-1].content.strip()
+    raw_output = result.messages[0].content.strip()
 
     try:
         agent_sequence = json.loads(raw_output)
