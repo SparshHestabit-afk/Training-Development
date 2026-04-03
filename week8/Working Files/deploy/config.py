@@ -1,0 +1,7 @@
+MODEL_PATH = "quantized/model.gguf"
+
+MAX_NEW_TOKENS = 512
+
+DEFAULT_TEMP = 0.7
+DEFAULT_TOP_P = 0.9
+DEFAULT_TOP_K = 50

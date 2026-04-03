@@ -1,0 +1,1 @@
+Computer architecture refers to the design and organization of a computer's internal components, including the central processing unit (CPU), memory, and input/output devices. It encompasses the way these components interact and work together to perform tasks.

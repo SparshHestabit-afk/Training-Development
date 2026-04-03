@@ -1,0 +1,28 @@
+model,prompt,latency,tokens_per_sec,peak_vram_MB,accuracy,output
+base_model,Explain what Docker containers are.,0.0500462959998913,19.981498730738675,6311.92431640625,0,Explain what Docker containers are.
+base_model,Explain Kubernetes orchestration.,0.04864449800061266,20.557309482100226,6312.01171875,0,Explain Kubernetes orchestration.
+base_model,What is machine learning in simple terms?,0.04580914100006339,21.829704250481715,6312.01171875,0,What is machine learning in simple terms?
+base_model,"If a server processes 200 requests per minute, how many requests in 5 minutes?",3.422162605000267,29.221288273644788,6317.05126953125,0,"If a server processes 200 requests per minute, how many requests in 5 minutes?
+
+Step 1: Calculate the number of requests per minute
+
+The number of requests per minute is calculated by dividing the total number of requests by the number of minutes in the time period. In this case, the total number of requests is 200 and the number of minutes in the time period is 5.
+
+So, the number of requests per minute is:
+
+```
+200 / 5 = 40
+```
+
+Step"
+base_model,Alice joined Google as a Data Scientist in 2022. Extract structured information.,3.033910021000338,32.960766571128595,6317.09912109375,0,Alice joined Google as a Data Scientist in 2022. Extract structured information. 2. Data Visualization: Alice uses Tableau to create interactive data visualizations. 3. Data Mining: Alice uses Python and SQL to perform data mining and data analysis. 4. Machine Learning: Alice uses Python and Scikit-learn to perform machine learning tasks. 5. Natural Language Processing: Alice uses Python and NLTK to perform natural language processing tasks. 6. Data Cleaning: Alice uses Python and Pandas to clean and prepare data
+finetuned_model,Explain what Docker containers are.,0.04598540300048626,21.74603101748235,6311.92431640625,0,Explain what Docker containers are.
+finetuned_model,Explain Kubernetes orchestration.,0.04348635800033662,22.995717415384824,6312.01171875,0,Explain Kubernetes orchestration.
+finetuned_model,What is machine learning in simple terms?,0.05728486099997099,17.456619123166004,6312.01171875,0,What is machine learning in simple terms?
+finetuned_model,"If a server processes 200 requests per minute, how many requests in 5 minutes?",0.04427886900066369,22.584136012710964,6313.06640625,0,"If a server processes 200 requests per minute, how many requests in 5 minutes?"
+finetuned_model,Alice joined Google as a Data Scientist in 2022. Extract structured information.,4.343663602000561,23.022040646504717,6317.0986328125,0,Alice joined Google as a Data Scientist in 2022. Extract structured information. 1. Data Scientist at Google - 1 year 10 months. 2. Data Scientist at Google - 1 year 10 months. 3. Data Scientist at Google - 1 year 10 months. 4. Data Scientist at Google - 1 year 10 months. 5. Data Scientist at Google - 1 year 10 months. 6. Data Scientist at Google - 1 year 10
+fp16_model,Explain what Docker containers are.,0.04881582599955436,20.485159874363877,6311.92431640625,0,Explain what Docker containers are.
+fp16_model,Explain Kubernetes orchestration.,0.04509386199970322,22.175967097397454,6312.01171875,0,Explain Kubernetes orchestration.
+fp16_model,What is machine learning in simple terms?,0.04759253300017008,21.011699461266883,6312.01171875,0,What is machine learning in simple terms?
+fp16_model,"If a server processes 200 requests per minute, how many requests in 5 minutes?",0.06350196700077504,15.747543694005495,6313.06640625,0,"If a server processes 200 requests per minute, how many requests in 5 minutes?"
+fp16_model,Alice joined Google as a Data Scientist in 2022. Extract structured information.,3.3925427399999535,29.476415675164457,6317.0986328125,0,Alice joined Google as a Data Scientist in 2022. Extract structured information. 1. Data Scientist at Google - 1 year 10 months. 2. Data Scientist at Google - 1 year 10 months. 3. Data Scientist at Google - 1 year 10 months. 4. Data Scientist at Google - 1 year 10 months. 5. Data Scientist at Google - 1 year 10 months. 6. Data Scientist at Google - 1 year 10

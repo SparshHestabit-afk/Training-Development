@@ -1,0 +1,22 @@
+{
+  "bufferResult": {
+    "method": "Buffer",
+    "sizeBytes": 52428800,
+    "timeMs": 74,
+    "memory": {
+      "rss": 94,
+      "heapUsed": 4.12,
+      "heapTotal": 5.56
+    }
+  },
+  "streamResult": {
+    "method": "Stream",
+    "sizeBytes": 52428800,
+    "timeMs": 102,
+    "memory": {
+      "rss": 75.27,
+      "heapUsed": 5.09,
+      "heapTotal": 7.56
+    }
+  }
+}

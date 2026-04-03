@@ -1,0 +1,11 @@
+{
+  "concurrency_1": {
+    "runtimeMs": "65.47"
+  },
+  "concurrency_4": {
+    "runtimeMs": "38.31"
+  },
+  "concurrency_8": {
+    "runtimeMs": "51.84"
+  }
+}

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Listing Page</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <header class="navbar">
+        <nav class="navbar-container">
+            <a href="index.html" class="logo">
+                Hesta<span class="logo-span" style="text-decoration: 2px underline #333;">MART</span>
+            </a>
+            <ul class="nav-links">
+                
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="product.html"
+                        style="font-weight: bolder; font-size:22px;text-decoration: 2px underline orangered;">PRODUCTS</a>
+                </li>
+                <li><a href="#AboutUs">ABOUT US</a></li>
+                <li><a href="#ContactUs">CONTACT US</a></li>
+                <li><a href="#SignUp" style="color: grey;font-weight: 500;">Sign Up</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- Navigation Bar Ends -->
+
+    <!-- Main Content -->
+    <main class="containers">
+
+        <!-- Product Category Section -->
+        <section>
+            <nav class="product-toolbar">
+
+                <div class="toolbar-row">
+                <!-- Search Bar + Sorting Products -->
+                <div class="product-filters">
+
+                    <!-- Sorting Products -->
+                    <select id="sort">
+                        <option value="byPrice">Sort ( By Price )</option>
+                        <option value="high">High -> Low</option>
+                        <option value="low">Low -> High</option>
+                    </select>
+                    <!-- Sorting Products Ends -->
+
+                    <!-- Search Bar -->
+                    <div class="search-box">
+                        <input type="text" id="search" placeholder="Type to Search......." />
+                    </div>
+                    <!-- Search Bar Ends -->
+
+                </div>
+                <!-- Search Bar + Sorting Products Ends -->
+
+                <!-- Product Category Navigation -->
+                <div class="product-categories">
+                    <button class="product-category-button active" data-category="all">All</button>
+                    <button class="product-category-button" data-category="smartphones">Smartphones</button>
+                    <button class="product-category-button" data-category="laptops">Laptops</button>
+                    <button class="product-category-button" data-category="watches">Watches</button>
+                    <button class="product-category-button" data-category="beauty">Beauty</button>
+                    <button class="product-category-button" data-category="groceries">Groceries</button>
+                    <button class="product-category-button" data-category="furniture">Furniture</button>
+                </div>
+                <!--Product Category Navigation Ends-->
+            
+                </div>
+            </nav>
+        </section>
+        <!-- Product Category Section Ends -->
+
+        <!-- Product Section -->
+        <section id="products" class="product-grid"></section>
+        <!-- Product Section Ends -->
+
+    </main>
+    <!-- Main Content Ends -->
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="footer-container">
+
+            <div>
+                <h4>About Us</h4>
+                <ul>
+                    <li>Company Info</li>
+                    <li>Editorial Team</li>
+                </ul>
+            </div>
+
+            <div>
+                <h4>Contact Us</h4>
+                <ul>
+                    <li>Email Us: news@example.com</li>
+                    <li>Phone: +91-12345-67890</li>
+                    <li>Support</li>
+                </ul>
+            </div>
+
+            <div>
+                <h4>Privacy Policy</h4>
+                <ul>
+                    <li>Privacy Policy</li>
+                    <li>Terms of Service & Use</li>
+                </ul>
+            </div>
+
+            <div>
+                <h4>Follow Us</h4>
+                <ul>
+                    <li>Facebook</li>
+                    <li>Twitter</li>
+                    <li>Instagram</li>
+                </ul>
+            </div>
+        </div>
+
+        <p>&copy; 2026 HestaMART Copyrights & Listing | Design : HESTABIT</p>
+    </footer>
+    <!-- Footer Section Ends -->
+
+    <script src="script.js"></script>
+</body>
+
+</html>

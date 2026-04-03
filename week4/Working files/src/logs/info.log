@@ -1,0 +1,759 @@
+[2026-02-05T09:15:08.509Z] [INFO]  Environment : local
+[2026-02-05T09:15:08.509Z] [INFO]  Initializing mongodb://localhost:27017/working_db database URI
+[2026-02-05T09:15:09.052Z] [INFO]  User documents inside collection:5
+[2026-02-05T09:15:09.053Z] [INFO]  Product documents inside collection:5
+[2026-02-05T09:15:09.053Z] [INFO]  Database connected successfully
+[2026-02-05T09:15:09.055Z] [INFO]  Security & global middlewares loaded
+[2026-02-05T09:15:09.055Z] [INFO]  Routes mounted
+[2026-02-05T09:15:09.056Z] [INFO]  Server started on PORT: 3000
+[2026-02-05T09:15:12.366Z] [INFO] [76a163f5-6fc6-46d9-a3f6-479f454f4e33] Fetching Products
+[2026-02-05T09:15:12.370Z] [INFO] [76a163f5-6fc6-46d9-a3f6-479f454f4e33] Products fetched successfully
+[2026-02-05T09:15:17.398Z] [INFO]  Email worker starting.....
+[2026-02-05T09:15:17.399Z] [INFO]  Email worker started
+[2026-02-05T09:16:59.031Z] [INFO] [500188af-edd1-40b2-9aae-c24b62b1a910] Notifying Product
+[2026-02-05T09:16:59.034Z] [INFO] [500188af-edd1-40b2-9aae-c24b62b1a910] Email job enqueued (jobId = 3) for userId = 6980a04dd6b8025a3f65645a
+[2026-02-05T09:16:59.036Z] [INFO] [3] Processing Email Job 3
+[2026-02-05T09:17:00.036Z] [INFO] [3] Email sent for job 3
+[2026-02-05T09:17:00.040Z] [INFO] [3] Email job success: 3 
+[2026-02-05T09:18:51.605Z] [INFO] [0cc50752-7623-4048-8762-d5760303b35d] Notifying Product
+[2026-02-05T09:18:51.606Z] [INFO] [0cc50752-7623-4048-8762-d5760303b35d] Email job enqueued (jobId = 4) for userId = 6980a04dd6b8025a3f65645a
+[2026-02-05T09:18:51.607Z] [INFO] [4] Processing Email Job 4
+[2026-02-05T09:18:52.609Z] [INFO] [4] Email sent for job 4
+[2026-02-05T09:18:52.611Z] [INFO] [4] Email job success: 4 
+[2026-02-05T10:24:47.848Z] [INFO]  Environment : local
+[2026-02-05T10:24:47.848Z] [INFO]  Initializing mongodb://localhost:27017/working_db database URI
+[2026-02-05T10:24:48.400Z] [INFO]  User documents inside collection:5
+[2026-02-05T10:24:48.402Z] [INFO]  Product documents inside collection:5
+[2026-02-05T10:24:48.402Z] [INFO]  Database connected successfully
+[2026-02-05T10:24:48.404Z] [INFO]  Security & global middlewares loaded
+[2026-02-05T10:24:48.404Z] [INFO]  Routes mounted
+[2026-02-05T10:24:48.405Z] [INFO]  Server started on PORT: 3000
+[2026-02-05T10:24:53.832Z] [INFO] [ff069a64-59d1-4f44-b490-70584fa9fc84] Fetching Products
+[2026-02-05T10:24:53.838Z] [INFO] [ff069a64-59d1-4f44-b490-70584fa9fc84] Products fetched successfully
+[2026-02-05T10:25:03.176Z] [INFO]  Email worker starting.....
+[2026-02-05T10:25:03.177Z] [INFO]  Email worker started
+[2026-02-05T10:25:07.195Z] [INFO] [42895377-1f44-4f8f-90bd-c68561fd134f] Notifying Product
+[2026-02-05T10:25:07.198Z] [INFO] [42895377-1f44-4f8f-90bd-c68561fd134f] Email job enqueued (jobId = 5) for userId = 6980a04dd6b8025a3f65645a
+[2026-02-05T10:25:07.200Z] [INFO] [5] Processing Email Job 5
+[2026-02-05T10:25:08.200Z] [INFO] [5] Email sent for job 5
+[2026-02-05T10:25:08.202Z] [INFO] [5] Email job success: 5 
+[2026-02-05T10:41:49.379Z] [INFO] [63d31504-e1a4-40ba-8146-de4c33217bfc] User created: {user._id}
+[2026-02-05T10:45:01.630Z] [INFO]  Environment : local
+[2026-02-05T10:45:01.630Z] [INFO]  Initializing mongodb://localhost:27017/working_db database URI
+[2026-02-05T10:45:02.177Z] [INFO]  User documents inside collection:6
+[2026-02-05T10:45:02.179Z] [INFO]  Product documents inside collection:5
+[2026-02-05T10:45:02.179Z] [INFO]  Database connected successfully
+[2026-02-05T10:45:02.181Z] [INFO]  Security & global middlewares loaded
+[2026-02-05T10:45:02.181Z] [INFO]  Routes mounted
+[2026-02-05T10:45:02.182Z] [INFO]  Server started on PORT: 3000
+[2026-02-05T10:45:07.692Z] [INFO] [9fde8539-1672-488b-a5dd-5ea5d3475b80] Fetching Products
+[2026-02-05T10:45:07.696Z] [INFO] [9fde8539-1672-488b-a5dd-5ea5d3475b80] Products fetched successfully
+[2026-02-05T10:45:12.852Z] [INFO]  Email worker starting.....
+[2026-02-05T10:45:12.854Z] [INFO]  Email worker started
+[2026-02-05T10:47:19.974Z] [INFO]  Environment : local
+[2026-02-05T10:47:19.974Z] [INFO]  Initializing mongodb://localhost:27017/working_db database URI
+[2026-02-05T10:47:20.520Z] [INFO]  User documents inside collection:6
+[2026-02-05T10:47:20.522Z] [INFO]  Product documents inside collection:5
+[2026-02-05T10:47:20.522Z] [INFO]  Database connected successfully
+[2026-02-05T10:47:20.524Z] [INFO]  Security & global middlewares loaded
+[2026-02-05T10:47:20.524Z] [INFO]  Routes mounted
+[2026-02-05T10:47:20.525Z] [INFO]  Server started on PORT: 3000
+[2026-02-05T10:47:23.595Z] [INFO] [71aa202f-2d55-4fc8-93ea-3de2f83bd61e] Fetching Products
+[2026-02-05T10:47:23.600Z] [INFO] [71aa202f-2d55-4fc8-93ea-3de2f83bd61e] Products fetched successfully
+[2026-02-05T10:47:27.828Z] [INFO]  Email worker starting.....
+[2026-02-05T10:47:27.830Z] [INFO]  Email worker started
+[2026-02-05T10:48:04.867Z] [INFO]  Environment : local
+[2026-02-05T10:48:04.867Z] [INFO]  Initializing mongodb://localhost:27017/working_db database URI
+[2026-02-05T10:48:05.414Z] [INFO]  User documents inside collection:6
+[2026-02-05T10:48:05.415Z] [INFO]  Product documents inside collection:5
+[2026-02-05T10:48:05.415Z] [INFO]  Database connected successfully
+[2026-02-05T10:48:05.417Z] [INFO]  Security & global middlewares loaded
+[2026-02-05T10:48:05.417Z] [INFO]  Routes mounted
+[2026-02-05T10:48:05.418Z] [INFO]  Server started on PORT: 3000
+[2026-02-05T10:48:22.846Z] [INFO]  Environment : local
+[2026-02-05T10:48:22.846Z] [INFO]  Initializing mongodb://localhost:27017/working_db database URI
+[2026-02-05T10:48:23.395Z] [INFO]  User documents inside collection:6
+[2026-02-05T10:48:23.396Z] [INFO]  Product documents inside collection:5
+[2026-02-05T10:48:23.396Z] [INFO]  Database connected successfully
+[2026-02-05T10:48:23.398Z] [INFO]  Security & global middlewares loaded
+[2026-02-05T10:48:23.398Z] [INFO]  Routes mounted
+[2026-02-05T10:48:23.400Z] [INFO]  Server started on PORT: 3000
+[2026-02-05T10:49:46.133Z] [INFO]  Environment : local
+[2026-02-05T10:49:46.134Z] [INFO]  Initializing mongodb://localhost:27017/working_db database URI
+[2026-02-05T10:49:46.676Z] [INFO]  User documents inside collection:6
+[2026-02-05T10:49:46.678Z] [INFO]  Product documents inside collection:5
+[2026-02-05T10:49:46.678Z] [INFO]  Database connected successfully
+[2026-02-05T10:49:46.681Z] [INFO]  Security & global middlewares loaded
+[2026-02-05T10:49:46.681Z] [INFO]  Routes mounted
+[2026-02-05T10:49:46.682Z] [INFO]  Server started on PORT: 3000
+[2026-02-05T10:51:18.164Z] [INFO]  Environment : local
+[2026-02-05T10:51:18.165Z] [INFO]  Initializing mongodb://localhost:27017/working_db database URI
+[2026-02-05T10:51:18.703Z] [INFO]  User documents inside collection:6
+[2026-02-05T10:51:18.704Z] [INFO]  Product documents inside collection:5
+[2026-02-05T10:51:18.704Z] [INFO]  Database connected successfully
+[2026-02-05T10:51:18.706Z] [INFO]  Security & global middlewares loaded
+[2026-02-05T10:51:18.706Z] [INFO]  Routes mounted
+[2026-02-05T10:51:18.707Z] [INFO]  Server started on PORT: 3000
+[2026-02-05T10:51:24.547Z] [INFO] [07c4313c-5ff0-4b01-8e42-ffe53c571b46] Fetching Products
+[2026-02-05T10:51:24.552Z] [INFO] [07c4313c-5ff0-4b01-8e42-ffe53c571b46] Products fetched successfully
+[2026-02-05T10:51:28.885Z] [INFO]  Email worker starting.....
+[2026-02-05T10:51:28.887Z] [INFO]  Email worker started
+[2026-02-05T10:51:32.356Z] [INFO] [f7ed7f4d-4b8a-40b0-89c4-9f8bdd2d4ffe] Notifying Product
+[2026-02-05T10:51:32.359Z] [INFO] [f7ed7f4d-4b8a-40b0-89c4-9f8bdd2d4ffe] Email job enqueued (jobId = 6) for userId = 6980a04dd6b8025a3f65645a
+[2026-02-05T10:51:32.361Z] [INFO] [6] Processing Email Job 6
+[2026-02-05T10:51:33.361Z] [INFO] [6] Email sent for job 6
+[2026-02-05T10:51:33.364Z] [INFO] [6] Email job success: 6 
+[2026-02-05T10:57:12.214Z] [INFO] [ab458b33-3564-49b7-86d5-4504bf7b7919] Creating Product
+[2026-02-05T10:57:12.224Z] [INFO] [ab458b33-3564-49b7-86d5-4504bf7b7919] Product created: 698477884a12c504995e3e2c
+[2026-02-05T10:57:49.213Z] [INFO]  Environment : local
+[2026-02-05T10:57:49.213Z] [INFO]  Initializing mongodb://localhost:27017/working_db database URI
+[2026-02-05T10:57:49.759Z] [INFO]  User documents inside collection:6
+[2026-02-05T10:57:49.760Z] [INFO]  Product documents inside collection:6
+[2026-02-05T10:57:49.760Z] [INFO]  Database connected successfully
+[2026-02-05T10:57:49.762Z] [INFO]  Security & global middlewares loaded
+[2026-02-05T10:57:49.762Z] [INFO]  Routes mounted
+[2026-02-05T10:57:49.763Z] [INFO]  Server started on PORT: 3000
+[2026-02-05T10:57:57.341Z] [INFO] [d51423f7-c992-407f-852e-5ec2a6463052] Creating Product
+[2026-02-05T10:57:57.349Z] [INFO] [d51423f7-c992-407f-852e-5ec2a6463052] Product created: 698477b5bd1f57ab319064d1
+[2026-02-05T11:06:25.908Z] [INFO]  Environment : local
+[2026-02-05T11:06:25.908Z] [INFO]  Initializing mongodb://localhost:27017/working_db database URI
+[2026-02-05T11:06:26.452Z] [INFO]  User documents inside collection:6
+[2026-02-05T11:06:26.453Z] [INFO]  Product documents inside collection:7
+[2026-02-05T11:06:26.453Z] [INFO]  Database connected successfully
+[2026-02-05T11:06:26.455Z] [INFO]  Security & global middlewares loaded
+[2026-02-05T11:06:26.455Z] [INFO]  Routes mounted
+[2026-02-05T11:06:26.456Z] [INFO]  Server started on PORT: 3000
+[2026-02-05T11:06:30.144Z] [INFO] [de2d6c4f-5ff3-4f59-bcaf-d73d4fc42e40] Creating Product
+[2026-02-05T11:06:30.156Z] [INFO] [de2d6c4f-5ff3-4f59-bcaf-d73d4fc42e40] Product created: 698479b647081f864b2a50a8
+[2026-02-05T11:07:00.524Z] [INFO] [5e7148b5-6cd0-4485-8333-bb4f89679b9a] Creating Product
+[2026-02-05T11:07:00.526Z] [INFO] [5e7148b5-6cd0-4485-8333-bb4f89679b9a] Product created: 698479d447081f864b2a50aa
+[2026-02-05T11:19:17.490Z] [INFO] [dd02940d-2dfd-4f71-aac4-fe69f3ac35df] Creating Product
+[2026-02-05T11:19:17.493Z] [INFO] [dd02940d-2dfd-4f71-aac4-fe69f3ac35df] Product created: 69847cb547081f864b2a50ac
+[2026-02-05T11:20:42.590Z] [INFO]  Environment : local
+[2026-02-05T11:20:42.590Z] [INFO]  Initializing mongodb://localhost:27017/working_db database URI
+[2026-02-05T11:20:43.131Z] [INFO]  User documents inside collection:6
+[2026-02-05T11:20:43.132Z] [INFO]  Product documents inside collection:9
+[2026-02-05T11:20:43.132Z] [INFO]  Database connected successfully
+[2026-02-05T11:20:43.134Z] [INFO]  Security & global middlewares loaded
+[2026-02-05T11:20:43.135Z] [INFO]  Routes mounted
+[2026-02-05T11:20:43.136Z] [INFO]  Server started on PORT: 3000
+[2026-02-05T11:20:46.607Z] [INFO] [a588b5cc-3b7f-4fd3-a64f-9b9c5cea212e] Creating Product
+[2026-02-05T11:20:46.615Z] [INFO] [a588b5cc-3b7f-4fd3-a64f-9b9c5cea212e] Product created: 69847d0ee7f91122ad8eb6b6
+[2026-02-05T11:21:44.192Z] [INFO] [cff4b3ab-e06a-4e20-87ea-0b7ed350275d] Fetching Products
+[2026-02-05T11:21:44.197Z] [INFO] [cff4b3ab-e06a-4e20-87ea-0b7ed350275d] Products fetched successfully
+[2026-02-05T11:22:21.113Z] [INFO] [79f341e4-285a-483f-b26e-84afaea430cf] Deleting Product
+[2026-02-05T11:22:21.120Z] [INFO] [79f341e4-285a-483f-b26e-84afaea430cf] Product Deleted Successfully
+[2026-02-05T11:22:57.554Z] [INFO] [014960c0-8752-4f4e-94ab-51f00b40f4ae] Restoring product
+[2026-02-05T11:22:57.562Z] [INFO] [014960c0-8752-4f4e-94ab-51f00b40f4ae] Product restored successfully
+[2026-02-05T11:24:21.170Z] [INFO] [0af47e90-9152-424a-a6fa-95798be02eee] Notifying Product
+[2026-02-05T11:25:04.104Z] [INFO] [353771d7-7d81-4b9b-ba2b-b14a1239a3a0] Notifying Product
+[2026-02-05T11:25:05.843Z] [INFO] [d087a5b8-be2f-485d-8367-017570ca960b] Notifying Product
+[2026-02-05T11:25:36.518Z] [INFO] [5c8d7ace-8388-40f5-ba48-91d71c02cfa0] Notifying Product
+[2026-02-05T11:25:40.032Z] [INFO] [aee29221-64d7-4519-bed3-0c5925f22e2f] Notifying Product
+[2026-02-05T11:25:49.674Z] [INFO]  Environment : local
+[2026-02-05T11:25:49.674Z] [INFO]  Initializing mongodb://localhost:27017/working_db database URI
+[2026-02-05T11:25:50.213Z] [INFO]  User documents inside collection:6
+[2026-02-05T11:25:50.215Z] [INFO]  Product documents inside collection:10
+[2026-02-05T11:25:50.215Z] [INFO]  Database connected successfully
+[2026-02-05T11:25:50.217Z] [INFO]  Security & global middlewares loaded
+[2026-02-05T11:25:50.217Z] [INFO]  Routes mounted
+[2026-02-05T11:25:50.218Z] [INFO]  Server started on PORT: 3000
+[2026-02-05T11:25:57.245Z] [INFO] [367bd89d-50da-432e-bc08-726a49c84b4e] Fetching Products
+[2026-02-05T11:25:57.249Z] [INFO] [367bd89d-50da-432e-bc08-726a49c84b4e] Products fetched successfully
+[2026-02-05T11:26:04.351Z] [INFO]  Email worker starting.....
+[2026-02-05T11:26:04.353Z] [INFO]  Email worker started
+[2026-02-05T11:26:12.306Z] [INFO] [cd7e9726-c2b4-4107-bcb0-04bd651700cc] Notifying Product
+[2026-02-05T11:26:12.311Z] [INFO] [cd7e9726-c2b4-4107-bcb0-04bd651700cc] Email job enqueued (jobId = 7) for userId = 6980a04dd6b8025a3f65645a
+[2026-02-05T11:26:12.312Z] [INFO] [7] Processing Email Job 7
+[2026-02-05T11:26:13.313Z] [INFO] [7] Email sent for job 7
+[2026-02-05T11:26:13.316Z] [INFO] [7] Email job success: 7 
+[2026-02-05T11:26:19.179Z] [INFO] [27bfbfec-0686-4dcb-888b-677b76c8eb25] Notifying Product
+[2026-02-05T11:27:17.266Z] [INFO] [02977ed2-3f36-4896-a538-bce9ee1a7704] Notifying Product
+[2026-02-05T11:27:17.266Z] [INFO] [02977ed2-3f36-4896-a538-bce9ee1a7704] Email job enqueued (jobId = 8) for userId = 6980a04dd6b8025a3f65645a
+[2026-02-05T11:27:17.267Z] [INFO] [8] Processing Email Job 8
+[2026-02-05T11:27:18.267Z] [INFO] [8] Email sent for job 8
+[2026-02-05T11:27:18.270Z] [INFO] [8] Email job success: 8 
+[2026-02-05T12:31:38.020Z] [INFO]  Environment : local
+[2026-02-05T12:31:38.022Z] [INFO]  Initializing mongodb://localhost:27017/working_db database URI
+[2026-02-05T12:31:38.041Z] [INFO]  Environment : local
+[2026-02-05T12:31:38.045Z] [INFO]  Initializing mongodb://localhost:27017/working_db database URI
+[2026-02-05T12:31:38.087Z] [INFO]  Environment : local
+[2026-02-05T12:31:38.088Z] [INFO]  Initializing mongodb://localhost:27017/working_db database URI
+[2026-02-05T12:31:38.088Z] [INFO]  Environment : local
+[2026-02-05T12:31:38.089Z] [INFO]  Initializing mongodb://localhost:27017/working_db database URI
+[2026-02-05T12:31:38.091Z] [INFO]  Environment : local
+[2026-02-05T12:31:38.092Z] [INFO]  Initializing mongodb://localhost:27017/working_db database URI
+[2026-02-05T12:31:38.110Z] [INFO]  Environment : local
+[2026-02-05T12:31:38.110Z] [INFO]  Initializing mongodb://localhost:27017/working_db database URI
+[2026-02-05T12:31:38.182Z] [INFO]  Environment : local
+[2026-02-05T12:31:38.182Z] [INFO]  Initializing mongodb://localhost:27017/working_db database URI
+[2026-02-05T12:31:38.243Z] [INFO]  Environment : local
+[2026-02-05T12:31:38.244Z] [INFO]  Initializing mongodb://localhost:27017/working_db database URI
+[2026-02-05T12:31:38.251Z] [INFO]  Environment : local
+[2026-02-05T12:31:38.252Z] [INFO]  Initializing mongodb://localhost:27017/working_db database URI
+[2026-02-05T12:31:38.289Z] [INFO]  Environment : local
+[2026-02-05T12:31:38.289Z] [INFO]  Initializing mongodb://localhost:27017/working_db database URI
+[2026-02-05T12:31:38.294Z] [INFO]  Environment : local
+[2026-02-05T12:31:38.295Z] [INFO]  Initializing mongodb://localhost:27017/working_db database URI
+[2026-02-05T12:31:38.323Z] [INFO]  Environment : local
+[2026-02-05T12:31:38.323Z] [INFO]  Initializing mongodb://localhost:27017/working_db database URI
+[2026-02-05T12:31:38.564Z] [INFO]  User documents inside collection:6
+[2026-02-05T12:31:38.565Z] [INFO]  Product documents inside collection:10
+[2026-02-05T12:31:38.565Z] [INFO]  Database connected successfully
+[2026-02-05T12:31:38.567Z] [INFO]  Security & global middlewares loaded
+[2026-02-05T12:31:38.567Z] [INFO]  Routes mounted
+[2026-02-05T12:31:38.569Z] [INFO]  Server started on PORT: 3000
+[2026-02-05T12:31:38.578Z] [INFO]  User documents inside collection:6
+[2026-02-05T12:31:38.579Z] [INFO]  Product documents inside collection:10
+[2026-02-05T12:31:38.579Z] [INFO]  Database connected successfully
+[2026-02-05T12:31:38.581Z] [INFO]  Security & global middlewares loaded
+[2026-02-05T12:31:38.582Z] [INFO]  Routes mounted
+[2026-02-05T12:31:38.583Z] [INFO]  Server started on PORT: 3000
+[2026-02-05T12:31:38.624Z] [INFO]  User documents inside collection:6
+[2026-02-05T12:31:38.625Z] [INFO]  Product documents inside collection:10
+[2026-02-05T12:31:38.625Z] [INFO]  Database connected successfully
+[2026-02-05T12:31:38.626Z] [INFO]  User documents inside collection:6
+[2026-02-05T12:31:38.628Z] [INFO]  Product documents inside collection:10
+[2026-02-05T12:31:38.628Z] [INFO]  Database connected successfully
+[2026-02-05T12:31:38.628Z] [INFO]  Security & global middlewares loaded
+[2026-02-05T12:31:38.629Z] [INFO]  Routes mounted
+[2026-02-05T12:31:38.630Z] [INFO]  User documents inside collection:6
+[2026-02-05T12:31:38.631Z] [INFO]  Server started on PORT: 3000
+[2026-02-05T12:31:38.632Z] [INFO]  Product documents inside collection:10
+[2026-02-05T12:31:38.632Z] [INFO]  Database connected successfully
+[2026-02-05T12:31:38.633Z] [INFO]  Security & global middlewares loaded
+[2026-02-05T12:31:38.634Z] [INFO]  Routes mounted
+[2026-02-05T12:31:38.634Z] [INFO]  Security & global middlewares loaded
+[2026-02-05T12:31:38.635Z] [INFO]  Routes mounted
+[2026-02-05T12:31:38.636Z] [INFO]  Server started on PORT: 3000
+[2026-02-05T12:31:38.636Z] [INFO]  Server started on PORT: 3000
+[2026-02-05T12:31:38.646Z] [INFO]  User documents inside collection:6
+[2026-02-05T12:31:38.648Z] [INFO]  Product documents inside collection:10
+[2026-02-05T12:31:38.648Z] [INFO]  Database connected successfully
+[2026-02-05T12:31:38.650Z] [INFO]  Security & global middlewares loaded
+[2026-02-05T12:31:38.651Z] [INFO]  Routes mounted
+[2026-02-05T12:31:38.652Z] [INFO]  Server started on PORT: 3000
+[2026-02-05T12:31:38.726Z] [INFO]  User documents inside collection:6
+[2026-02-05T12:31:38.727Z] [INFO]  Product documents inside collection:10
+[2026-02-05T12:31:38.727Z] [INFO]  Database connected successfully
+[2026-02-05T12:31:38.730Z] [INFO]  Security & global middlewares loaded
+[2026-02-05T12:31:38.730Z] [INFO]  Routes mounted
+[2026-02-05T12:31:38.732Z] [INFO]  Server started on PORT: 3000
+[2026-02-05T12:31:38.788Z] [INFO]  User documents inside collection:6
+[2026-02-05T12:31:38.789Z] [INFO]  User documents inside collection:6
+[2026-02-05T12:31:38.790Z] [INFO]  Product documents inside collection:10
+[2026-02-05T12:31:38.790Z] [INFO]  Database connected successfully
+[2026-02-05T12:31:38.790Z] [INFO]  Product documents inside collection:10
+[2026-02-05T12:31:38.791Z] [INFO]  Database connected successfully
+[2026-02-05T12:31:38.793Z] [INFO]  Security & global middlewares loaded
+[2026-02-05T12:31:38.793Z] [INFO]  Routes mounted
+[2026-02-05T12:31:38.794Z] [INFO]  Server started on PORT: 3000
+[2026-02-05T12:31:38.794Z] [INFO]  Security & global middlewares loaded
+[2026-02-05T12:31:38.795Z] [INFO]  Routes mounted
+[2026-02-05T12:31:38.797Z] [INFO]  Server started on PORT: 3000
+[2026-02-05T12:31:38.819Z] [INFO]  User documents inside collection:6
+[2026-02-05T12:31:38.820Z] [INFO]  Product documents inside collection:10
+[2026-02-05T12:31:38.820Z] [INFO]  Database connected successfully
+[2026-02-05T12:31:38.823Z] [INFO]  Security & global middlewares loaded
+[2026-02-05T12:31:38.823Z] [INFO]  Routes mounted
+[2026-02-05T12:31:38.824Z] [INFO]  Server started on PORT: 3000
+[2026-02-05T12:31:38.833Z] [INFO]  User documents inside collection:6
+[2026-02-05T12:31:38.835Z] [INFO]  Product documents inside collection:10
+[2026-02-05T12:31:38.835Z] [INFO]  Database connected successfully
+[2026-02-05T12:31:38.837Z] [INFO]  Security & global middlewares loaded
+[2026-02-05T12:31:38.837Z] [INFO]  Routes mounted
+[2026-02-05T12:31:38.839Z] [INFO]  Server started on PORT: 3000
+[2026-02-05T12:31:38.855Z] [INFO]  User documents inside collection:6
+[2026-02-05T12:31:38.858Z] [INFO]  Product documents inside collection:10
+[2026-02-05T12:31:38.859Z] [INFO]  Database connected successfully
+[2026-02-05T12:31:38.861Z] [INFO]  Security & global middlewares loaded
+[2026-02-05T12:31:38.861Z] [INFO]  Routes mounted
+[2026-02-05T12:31:38.863Z] [INFO]  Server started on PORT: 3000
+[2026-02-05T12:34:05.829Z] [INFO]  Environment : local
+[2026-02-05T12:34:05.829Z] [INFO]  Initializing mongodb://localhost:27017/working_db database URI
+[2026-02-05T12:34:06.370Z] [INFO]  User documents inside collection:6
+[2026-02-05T12:34:06.372Z] [INFO]  Product documents inside collection:10
+[2026-02-05T12:34:06.372Z] [INFO]  Database connected successfully
+[2026-02-05T12:34:06.374Z] [INFO]  Security & global middlewares loaded
+[2026-02-05T12:34:06.374Z] [INFO]  Routes mounted
+[2026-02-05T12:34:06.375Z] [INFO]  Server started on PORT: 3000
+[2026-02-05T12:39:21.612Z] [INFO]  Environment : local
+[2026-02-05T12:39:21.613Z] [INFO]  Initializing mongodb://localhost:27017/working_db database URI
+[2026-02-05T12:39:21.621Z] [INFO]  Environment : local
+[2026-02-05T12:39:21.621Z] [INFO]  Initializing mongodb://localhost:27017/working_db database URI
+[2026-02-05T12:39:21.818Z] [INFO]  Environment : local
+[2026-02-05T12:39:21.818Z] [INFO]  Initializing mongodb://localhost:27017/working_db database URI
+[2026-02-05T12:39:21.830Z] [INFO]  Environment : local
+[2026-02-05T12:39:21.831Z] [INFO]  Initializing mongodb://localhost:27017/working_db database URI
+[2026-02-05T12:39:21.989Z] [INFO]  Environment : local
+[2026-02-05T12:39:21.989Z] [INFO]  Initializing mongodb://localhost:27017/working_db database URI
+[2026-02-05T12:39:22.170Z] [INFO]  User documents inside collection:6
+[2026-02-05T12:39:22.172Z] [INFO]  User documents inside collection:6
+[2026-02-05T12:39:22.174Z] [INFO]  Product documents inside collection:10
+[2026-02-05T12:39:22.175Z] [INFO]  Database connected successfully
+[2026-02-05T12:39:22.176Z] [INFO]  Product documents inside collection:10
+[2026-02-05T12:39:22.177Z] [INFO]  Database connected successfully
+[2026-02-05T12:39:22.177Z] [INFO]  Security & global middlewares loaded
+[2026-02-05T12:39:22.178Z] [INFO]  Routes mounted
+[2026-02-05T12:39:22.180Z] [INFO]  Server started on PORT: 3000
+[2026-02-05T12:39:22.181Z] [INFO]  Security & global middlewares loaded
+[2026-02-05T12:39:22.181Z] [INFO]  Routes mounted
+[2026-02-05T12:39:22.182Z] [INFO]  Environment : local
+[2026-02-05T12:39:22.183Z] [INFO]  Initializing mongodb://localhost:27017/working_db database URI
+[2026-02-05T12:39:22.184Z] [INFO]  Server started on PORT: 3000
+[2026-02-05T12:39:22.236Z] [INFO]  Environment : local
+[2026-02-05T12:39:22.237Z] [INFO]  Initializing mongodb://localhost:27017/working_db database URI
+[2026-02-05T12:39:22.272Z] [INFO]  Environment : local
+[2026-02-05T12:39:22.272Z] [INFO]  Initializing mongodb://localhost:27017/working_db database URI
+[2026-02-05T12:39:22.297Z] [INFO]  Environment : local
+[2026-02-05T12:39:22.297Z] [INFO]  Initializing mongodb://localhost:27017/working_db database URI
+[2026-02-05T12:39:22.354Z] [INFO]  User documents inside collection:6
+[2026-02-05T12:39:22.356Z] [INFO]  Product documents inside collection:10
+[2026-02-05T12:39:22.356Z] [INFO]  Database connected successfully
+[2026-02-05T12:39:22.358Z] [INFO]  Security & global middlewares loaded
+[2026-02-05T12:39:22.358Z] [INFO]  Routes mounted
+[2026-02-05T12:39:22.360Z] [INFO]  Server started on PORT: 3000
+[2026-02-05T12:39:22.368Z] [INFO]  User documents inside collection:6
+[2026-02-05T12:39:22.369Z] [INFO]  Product documents inside collection:10
+[2026-02-05T12:39:22.369Z] [INFO]  Database connected successfully
+[2026-02-05T12:39:22.371Z] [INFO]  Security & global middlewares loaded
+[2026-02-05T12:39:22.371Z] [INFO]  Routes mounted
+[2026-02-05T12:39:22.374Z] [INFO]  Server started on PORT: 3000
+[2026-02-05T12:39:22.386Z] [INFO]  Environment : local
+[2026-02-05T12:39:22.386Z] [INFO]  Initializing mongodb://localhost:27017/working_db database URI
+[2026-02-05T12:39:22.407Z] [INFO]  Environment : local
+[2026-02-05T12:39:22.407Z] [INFO]  Initializing mongodb://localhost:27017/working_db database URI
+[2026-02-05T12:39:22.432Z] [INFO]  Environment : local
+[2026-02-05T12:39:22.433Z] [INFO]  Initializing mongodb://localhost:27017/working_db database URI
+[2026-02-05T12:39:22.533Z] [INFO]  User documents inside collection:6
+[2026-02-05T12:39:22.534Z] [INFO]  Product documents inside collection:10
+[2026-02-05T12:39:22.534Z] [INFO]  Database connected successfully
+[2026-02-05T12:39:22.536Z] [INFO]  Security & global middlewares loaded
+[2026-02-05T12:39:22.536Z] [INFO]  Routes mounted
+[2026-02-05T12:39:22.537Z] [INFO]  Server started on PORT: 3000
+[2026-02-05T12:39:22.724Z] [INFO]  User documents inside collection:6
+[2026-02-05T12:39:22.726Z] [INFO]  Product documents inside collection:10
+[2026-02-05T12:39:22.726Z] [INFO]  Database connected successfully
+[2026-02-05T12:39:22.728Z] [INFO]  Security & global middlewares loaded
+[2026-02-05T12:39:22.728Z] [INFO]  Routes mounted
+[2026-02-05T12:39:22.730Z] [INFO]  Server started on PORT: 3000
+[2026-02-05T12:39:22.769Z] [INFO]  User documents inside collection:6
+[2026-02-05T12:39:22.771Z] [INFO]  Product documents inside collection:10
+[2026-02-05T12:39:22.771Z] [INFO]  Database connected successfully
+[2026-02-05T12:39:22.773Z] [INFO]  Security & global middlewares loaded
+[2026-02-05T12:39:22.773Z] [INFO]  Routes mounted
+[2026-02-05T12:39:22.774Z] [INFO]  Server started on PORT: 3000
+[2026-02-05T12:39:22.804Z] [INFO]  User documents inside collection:6
+[2026-02-05T12:39:22.805Z] [INFO]  Product documents inside collection:10
+[2026-02-05T12:39:22.805Z] [INFO]  Database connected successfully
+[2026-02-05T12:39:22.807Z] [INFO]  Security & global middlewares loaded
+[2026-02-05T12:39:22.807Z] [INFO]  Routes mounted
+[2026-02-05T12:39:22.809Z] [INFO]  Server started on PORT: 3000
+[2026-02-05T12:39:22.828Z] [INFO]  User documents inside collection:6
+[2026-02-05T12:39:22.829Z] [INFO]  Product documents inside collection:10
+[2026-02-05T12:39:22.829Z] [INFO]  Database connected successfully
+[2026-02-05T12:39:22.831Z] [INFO]  Security & global middlewares loaded
+[2026-02-05T12:39:22.831Z] [INFO]  Routes mounted
+[2026-02-05T12:39:22.833Z] [INFO]  Server started on PORT: 3000
+[2026-02-05T12:39:22.925Z] [INFO]  User documents inside collection:6
+[2026-02-05T12:39:22.926Z] [INFO]  Product documents inside collection:10
+[2026-02-05T12:39:22.927Z] [INFO]  Database connected successfully
+[2026-02-05T12:39:22.929Z] [INFO]  Security & global middlewares loaded
+[2026-02-05T12:39:22.929Z] [INFO]  Routes mounted
+[2026-02-05T12:39:22.930Z] [INFO]  Server started on PORT: 3000
+[2026-02-05T12:39:22.944Z] [INFO]  User documents inside collection:6
+[2026-02-05T12:39:22.946Z] [INFO]  Product documents inside collection:10
+[2026-02-05T12:39:22.946Z] [INFO]  Database connected successfully
+[2026-02-05T12:39:22.948Z] [INFO]  Security & global middlewares loaded
+[2026-02-05T12:39:22.948Z] [INFO]  Routes mounted
+[2026-02-05T12:39:22.949Z] [INFO]  Server started on PORT: 3000
+[2026-02-05T12:39:22.962Z] [INFO]  User documents inside collection:6
+[2026-02-05T12:39:22.964Z] [INFO]  Product documents inside collection:10
+[2026-02-05T12:39:22.964Z] [INFO]  Database connected successfully
+[2026-02-05T12:39:22.966Z] [INFO]  Security & global middlewares loaded
+[2026-02-05T12:39:22.966Z] [INFO]  Routes mounted
+[2026-02-05T12:39:22.967Z] [INFO]  Server started on PORT: 3000
+[2026-02-05T12:46:49.126Z] [INFO]  Environment : local
+[2026-02-05T12:46:49.127Z] [INFO]  Environment : local
+[2026-02-05T12:46:49.127Z] [INFO]  Initializing mongodb://localhost:27017/working_db database URI
+[2026-02-05T12:46:49.128Z] [INFO]  Initializing mongodb://localhost:27017/working_db database URI
+[2026-02-05T12:46:49.131Z] [INFO]  Environment : local
+[2026-02-05T12:46:49.131Z] [INFO]  Initializing mongodb://localhost:27017/working_db database URI
+[2026-02-05T12:46:49.170Z] [INFO]  Environment : local
+[2026-02-05T12:46:49.170Z] [INFO]  Initializing mongodb://localhost:27017/working_db database URI
+[2026-02-05T12:46:49.173Z] [INFO]  Environment : local
+[2026-02-05T12:46:49.174Z] [INFO]  Initializing mongodb://localhost:27017/working_db database URI
+[2026-02-05T12:46:49.174Z] [INFO]  Environment : local
+[2026-02-05T12:46:49.175Z] [INFO]  Initializing mongodb://localhost:27017/working_db database URI
+[2026-02-05T12:46:49.179Z] [INFO]  Environment : local
+[2026-02-05T12:46:49.179Z] [INFO]  Initializing mongodb://localhost:27017/working_db database URI
+[2026-02-05T12:46:49.219Z] [INFO]  Environment : local
+[2026-02-05T12:46:49.220Z] [INFO]  Initializing mongodb://localhost:27017/working_db database URI
+[2026-02-05T12:46:49.220Z] [INFO]  Environment : local
+[2026-02-05T12:46:49.220Z] [INFO]  Initializing mongodb://localhost:27017/working_db database URI
+[2026-02-05T12:46:49.227Z] [INFO]  Environment : local
+[2026-02-05T12:46:49.228Z] [INFO]  Initializing mongodb://localhost:27017/working_db database URI
+[2026-02-05T12:46:49.242Z] [INFO]  Environment : local
+[2026-02-05T12:46:49.242Z] [INFO]  Initializing mongodb://localhost:27017/working_db database URI
+[2026-02-05T12:46:49.250Z] [INFO]  Environment : local
+[2026-02-05T12:46:49.250Z] [INFO]  Initializing mongodb://localhost:27017/working_db database URI
+[2026-02-05T12:46:49.669Z] [INFO]  User documents inside collection:6
+[2026-02-05T12:46:49.669Z] [INFO]  User documents inside collection:6
+[2026-02-05T12:46:49.671Z] [INFO]  Product documents inside collection:10
+[2026-02-05T12:46:49.671Z] [INFO]  Product documents inside collection:10
+[2026-02-05T12:46:49.671Z] [INFO]  Database connected successfully
+[2026-02-05T12:46:49.671Z] [INFO]  Database connected successfully
+[2026-02-05T12:46:49.673Z] [INFO]  Security & global middlewares loaded
+[2026-02-05T12:46:49.673Z] [INFO]  User documents inside collection:6
+[2026-02-05T12:46:49.673Z] [INFO]  Routes mounted
+[2026-02-05T12:46:49.674Z] [INFO]  Security & global middlewares loaded
+[2026-02-05T12:46:49.674Z] [INFO]  Routes mounted
+[2026-02-05T12:46:49.675Z] [INFO]  Product documents inside collection:10
+[2026-02-05T12:46:49.675Z] [INFO]  Database connected successfully
+[2026-02-05T12:46:49.676Z] [INFO]  Server started on PORT: 3000
+[2026-02-05T12:46:49.676Z] [INFO]  Server started on PORT: 3000
+[2026-02-05T12:46:49.677Z] [INFO]  Security & global middlewares loaded
+[2026-02-05T12:46:49.677Z] [INFO]  Routes mounted
+[2026-02-05T12:46:49.679Z] [INFO]  Server started on PORT: 3000
+[2026-02-05T12:46:49.703Z] [INFO]  User documents inside collection:6
+[2026-02-05T12:46:49.705Z] [INFO]  Product documents inside collection:10
+[2026-02-05T12:46:49.705Z] [INFO]  Database connected successfully
+[2026-02-05T12:46:49.708Z] [INFO]  Security & global middlewares loaded
+[2026-02-05T12:46:49.708Z] [INFO]  Routes mounted
+[2026-02-05T12:46:49.710Z] [INFO]  Server started on PORT: 3000
+[2026-02-05T12:46:49.710Z] [INFO]  User documents inside collection:6
+[2026-02-05T12:46:49.710Z] [INFO]  User documents inside collection:6
+[2026-02-05T12:46:49.712Z] [INFO]  Product documents inside collection:10
+[2026-02-05T12:46:49.712Z] [INFO]  Database connected successfully
+[2026-02-05T12:46:49.712Z] [INFO]  Product documents inside collection:10
+[2026-02-05T12:46:49.712Z] [INFO]  Database connected successfully
+[2026-02-05T12:46:49.714Z] [INFO]  Security & global middlewares loaded
+[2026-02-05T12:46:49.714Z] [INFO]  Security & global middlewares loaded
+[2026-02-05T12:46:49.714Z] [INFO]  Routes mounted
+[2026-02-05T12:46:49.714Z] [INFO]  Routes mounted
+[2026-02-05T12:46:49.716Z] [INFO]  Server started on PORT: 3000
+[2026-02-05T12:46:49.716Z] [INFO]  Server started on PORT: 3000
+[2026-02-05T12:46:49.724Z] [INFO]  User documents inside collection:6
+[2026-02-05T12:46:49.726Z] [INFO]  Product documents inside collection:10
+[2026-02-05T12:46:49.726Z] [INFO]  Database connected successfully
+[2026-02-05T12:46:49.730Z] [INFO]  Security & global middlewares loaded
+[2026-02-05T12:46:49.730Z] [INFO]  Routes mounted
+[2026-02-05T12:46:49.732Z] [INFO]  Server started on PORT: 3000
+[2026-02-05T12:46:49.749Z] [INFO]  User documents inside collection:6
+[2026-02-05T12:46:49.750Z] [INFO]  User documents inside collection:6
+[2026-02-05T12:46:49.751Z] [INFO]  Product documents inside collection:10
+[2026-02-05T12:46:49.751Z] [INFO]  Database connected successfully
+[2026-02-05T12:46:49.751Z] [INFO]  Product documents inside collection:10
+[2026-02-05T12:46:49.752Z] [INFO]  Database connected successfully
+[2026-02-05T12:46:49.753Z] [INFO]  Security & global middlewares loaded
+[2026-02-05T12:46:49.753Z] [INFO]  Routes mounted
+[2026-02-05T12:46:49.754Z] [INFO]  Security & global middlewares loaded
+[2026-02-05T12:46:49.754Z] [INFO]  Routes mounted
+[2026-02-05T12:46:49.755Z] [INFO]  Server started on PORT: 3000
+[2026-02-05T12:46:49.755Z] [INFO]  Server started on PORT: 3000
+[2026-02-05T12:46:49.775Z] [INFO]  User documents inside collection:6
+[2026-02-05T12:46:49.778Z] [INFO]  Product documents inside collection:10
+[2026-02-05T12:46:49.778Z] [INFO]  Database connected successfully
+[2026-02-05T12:46:49.779Z] [INFO]  User documents inside collection:6
+[2026-02-05T12:46:49.780Z] [INFO]  Product documents inside collection:10
+[2026-02-05T12:46:49.780Z] [INFO]  Database connected successfully
+[2026-02-05T12:46:49.782Z] [INFO]  Security & global middlewares loaded
+[2026-02-05T12:46:49.782Z] [INFO]  Routes mounted
+[2026-02-05T12:46:49.782Z] [INFO]  Security & global middlewares loaded
+[2026-02-05T12:46:49.783Z] [INFO]  Routes mounted
+[2026-02-05T12:46:49.784Z] [INFO]  Server started on PORT: 3000
+[2026-02-05T12:46:49.786Z] [INFO]  Server started on PORT: 3000
+[2026-02-05T12:46:49.786Z] [INFO]  User documents inside collection:6
+[2026-02-05T12:46:49.788Z] [INFO]  Product documents inside collection:10
+[2026-02-05T12:46:49.788Z] [INFO]  Database connected successfully
+[2026-02-05T12:46:49.790Z] [INFO]  Security & global middlewares loaded
+[2026-02-05T12:46:49.790Z] [INFO]  Routes mounted
+[2026-02-05T12:46:49.792Z] [INFO]  Server started on PORT: 3000
+[2026-02-05T13:17:54.793Z] [INFO]  Environment : local
+[2026-02-05T13:17:54.793Z] [INFO]  Initializing mongodb://localhost:27017/working_db database URI
+[2026-02-05T13:17:54.856Z] [INFO]  Environment : local
+[2026-02-05T13:17:54.857Z] [INFO]  Initializing mongodb://localhost:27017/working_db database URI
+[2026-02-05T13:17:54.943Z] [INFO]  Environment : local
+[2026-02-05T13:17:54.943Z] [INFO]  Initializing mongodb://localhost:27017/working_db database URI
+[2026-02-05T13:17:55.022Z] [INFO]  Environment : local
+[2026-02-05T13:17:55.022Z] [INFO]  Initializing mongodb://localhost:27017/working_db database URI
+[2026-02-05T13:17:55.153Z] [INFO]  Environment : local
+[2026-02-05T13:17:55.154Z] [INFO]  Initializing mongodb://localhost:27017/working_db database URI
+[2026-02-05T13:17:55.243Z] [INFO]  Environment : local
+[2026-02-05T13:17:55.244Z] [INFO]  Initializing mongodb://localhost:27017/working_db database URI
+[2026-02-05T13:17:55.335Z] [INFO]  User documents inside collection:6
+[2026-02-05T13:17:55.336Z] [INFO]  Environment : local
+[2026-02-05T13:17:55.336Z] [INFO]  Initializing mongodb://localhost:27017/working_db database URI
+[2026-02-05T13:17:55.336Z] [INFO]  Product documents inside collection:10
+[2026-02-05T13:17:55.337Z] [INFO]  Database connected successfully
+[2026-02-05T13:17:55.339Z] [INFO]  Security & global middlewares loaded
+[2026-02-05T13:17:55.339Z] [INFO]  Routes mounted
+[2026-02-05T13:17:55.341Z] [INFO]  Server started on PORT: 3000
+[2026-02-05T13:17:55.406Z] [INFO]  Environment : local
+[2026-02-05T13:17:55.407Z] [INFO]  Initializing mongodb://localhost:27017/working_db database URI
+[2026-02-05T13:17:55.411Z] [INFO]  User documents inside collection:6
+[2026-02-05T13:17:55.413Z] [INFO]  Product documents inside collection:10
+[2026-02-05T13:17:55.413Z] [INFO]  Database connected successfully
+[2026-02-05T13:17:55.416Z] [INFO]  Security & global middlewares loaded
+[2026-02-05T13:17:55.416Z] [INFO]  Routes mounted
+[2026-02-05T13:17:55.417Z] [INFO]  Server started on PORT: 3000
+[2026-02-05T13:17:55.447Z] [INFO]  Environment : local
+[2026-02-05T13:17:55.447Z] [INFO]  Initializing mongodb://localhost:27017/working_db database URI
+[2026-02-05T13:17:55.450Z] [INFO]  Environment : local
+[2026-02-05T13:17:55.451Z] [INFO]  Initializing mongodb://localhost:27017/working_db database URI
+[2026-02-05T13:17:55.479Z] [INFO]  User documents inside collection:6
+[2026-02-05T13:17:55.480Z] [INFO]  Product documents inside collection:10
+[2026-02-05T13:17:55.480Z] [INFO]  Database connected successfully
+[2026-02-05T13:17:55.482Z] [INFO]  Security & global middlewares loaded
+[2026-02-05T13:17:55.483Z] [INFO]  Routes mounted
+[2026-02-05T13:17:55.484Z] [INFO]  Server started on PORT: 3000
+[2026-02-05T13:17:55.553Z] [INFO]  User documents inside collection:6
+[2026-02-05T13:17:55.554Z] [INFO]  Product documents inside collection:10
+[2026-02-05T13:17:55.554Z] [INFO]  Database connected successfully
+[2026-02-05T13:17:55.556Z] [INFO]  Security & global middlewares loaded
+[2026-02-05T13:17:55.556Z] [INFO]  Routes mounted
+[2026-02-05T13:17:55.558Z] [INFO]  Server started on PORT: 3000
+[2026-02-05T13:17:55.590Z] [INFO]  Environment : local
+[2026-02-05T13:17:55.590Z] [INFO]  Initializing mongodb://localhost:27017/working_db database URI
+[2026-02-05T13:17:55.627Z] [INFO]  Environment : local
+[2026-02-05T13:17:55.627Z] [INFO]  Initializing mongodb://localhost:27017/working_db database URI
+[2026-02-05T13:17:55.695Z] [INFO]  User documents inside collection:6
+[2026-02-05T13:17:55.697Z] [INFO]  Product documents inside collection:10
+[2026-02-05T13:17:55.697Z] [INFO]  Database connected successfully
+[2026-02-05T13:17:55.699Z] [INFO]  Security & global middlewares loaded
+[2026-02-05T13:17:55.699Z] [INFO]  Routes mounted
+[2026-02-05T13:17:55.701Z] [INFO]  Server started on PORT: 3000
+[2026-02-05T13:17:55.786Z] [INFO]  User documents inside collection:6
+[2026-02-05T13:17:55.788Z] [INFO]  Product documents inside collection:10
+[2026-02-05T13:17:55.788Z] [INFO]  Database connected successfully
+[2026-02-05T13:17:55.790Z] [INFO]  Security & global middlewares loaded
+[2026-02-05T13:17:55.790Z] [INFO]  Routes mounted
+[2026-02-05T13:17:55.792Z] [INFO]  Server started on PORT: 3000
+[2026-02-05T13:17:55.874Z] [INFO]  User documents inside collection:6
+[2026-02-05T13:17:55.876Z] [INFO]  Product documents inside collection:10
+[2026-02-05T13:17:55.876Z] [INFO]  Database connected successfully
+[2026-02-05T13:17:55.878Z] [INFO]  Security & global middlewares loaded
+[2026-02-05T13:17:55.878Z] [INFO]  Routes mounted
+[2026-02-05T13:17:55.880Z] [INFO]  Server started on PORT: 3000
+[2026-02-05T13:17:55.950Z] [INFO]  User documents inside collection:6
+[2026-02-05T13:17:55.951Z] [INFO]  Product documents inside collection:10
+[2026-02-05T13:17:55.951Z] [INFO]  Database connected successfully
+[2026-02-05T13:17:55.953Z] [INFO]  Security & global middlewares loaded
+[2026-02-05T13:17:55.953Z] [INFO]  Routes mounted
+[2026-02-05T13:17:55.955Z] [INFO]  Server started on PORT: 3000
+[2026-02-05T13:17:55.978Z] [INFO]  User documents inside collection:6
+[2026-02-05T13:17:55.979Z] [INFO]  Product documents inside collection:10
+[2026-02-05T13:17:55.979Z] [INFO]  Database connected successfully
+[2026-02-05T13:17:55.981Z] [INFO]  Security & global middlewares loaded
+[2026-02-05T13:17:55.982Z] [INFO]  Routes mounted
+[2026-02-05T13:17:55.984Z] [INFO]  Server started on PORT: 3000
+[2026-02-05T13:17:55.985Z] [INFO]  User documents inside collection:6
+[2026-02-05T13:17:55.987Z] [INFO]  Product documents inside collection:10
+[2026-02-05T13:17:55.987Z] [INFO]  Database connected successfully
+[2026-02-05T13:17:55.989Z] [INFO]  Security & global middlewares loaded
+[2026-02-05T13:17:55.989Z] [INFO]  Routes mounted
+[2026-02-05T13:17:55.990Z] [INFO]  Server started on PORT: 3000
+[2026-02-05T13:17:56.130Z] [INFO]  User documents inside collection:6
+[2026-02-05T13:17:56.132Z] [INFO]  Product documents inside collection:10
+[2026-02-05T13:17:56.132Z] [INFO]  Database connected successfully
+[2026-02-05T13:17:56.134Z] [INFO]  Security & global middlewares loaded
+[2026-02-05T13:17:56.134Z] [INFO]  Routes mounted
+[2026-02-05T13:17:56.135Z] [INFO]  Server started on PORT: 3000
+[2026-02-05T13:17:56.159Z] [INFO]  User documents inside collection:6
+[2026-02-05T13:17:56.160Z] [INFO]  Product documents inside collection:10
+[2026-02-05T13:17:56.160Z] [INFO]  Database connected successfully
+[2026-02-05T13:17:56.163Z] [INFO]  Security & global middlewares loaded
+[2026-02-05T13:17:56.163Z] [INFO]  Routes mounted
+[2026-02-05T13:17:56.164Z] [INFO]  Server started on PORT: 3000
+[2026-02-05T13:20:07.400Z] [INFO]  Environment : local
+[2026-02-05T13:20:07.401Z] [INFO]  Initializing mongodb://localhost:27017/working_db database URI
+[2026-02-05T13:20:07.473Z] [INFO]  Environment : local
+[2026-02-05T13:20:07.473Z] [INFO]  Initializing mongodb://localhost:27017/working_db database URI
+[2026-02-05T13:20:07.660Z] [INFO]  Environment : local
+[2026-02-05T13:20:07.661Z] [INFO]  Initializing mongodb://localhost:27017/working_db database URI
+[2026-02-05T13:20:07.732Z] [INFO]  Environment : local
+[2026-02-05T13:20:07.732Z] [INFO]  Initializing mongodb://localhost:27017/working_db database URI
+[2026-02-05T13:20:07.813Z] [INFO]  Environment : local
+[2026-02-05T13:20:07.814Z] [INFO]  Initializing mongodb://localhost:27017/working_db database URI
+[2026-02-05T13:20:07.850Z] [INFO]  Environment : local
+[2026-02-05T13:20:07.850Z] [INFO]  Initializing mongodb://localhost:27017/working_db database URI
+[2026-02-05T13:20:07.939Z] [INFO]  User documents inside collection:6
+[2026-02-05T13:20:07.941Z] [INFO]  Product documents inside collection:10
+[2026-02-05T13:20:07.941Z] [INFO]  Database connected successfully
+[2026-02-05T13:20:07.943Z] [INFO]  Security & global middlewares loaded
+[2026-02-05T13:20:07.944Z] [INFO]  Routes mounted
+[2026-02-05T13:20:07.946Z] [INFO]  Server started on PORT: 3000
+[2026-02-05T13:20:07.994Z] [INFO]  Environment : local
+[2026-02-05T13:20:07.995Z] [INFO]  Initializing mongodb://localhost:27017/working_db database URI
+[2026-02-05T13:20:08.015Z] [INFO]  User documents inside collection:6
+[2026-02-05T13:20:08.018Z] [INFO]  Product documents inside collection:10
+[2026-02-05T13:20:08.018Z] [INFO]  Database connected successfully
+[2026-02-05T13:20:08.023Z] [INFO]  Security & global middlewares loaded
+[2026-02-05T13:20:08.023Z] [INFO]  Routes mounted
+[2026-02-05T13:20:08.026Z] [INFO]  Server started on PORT: 3000
+[2026-02-05T13:20:08.031Z] [INFO]  Environment : local
+[2026-02-05T13:20:08.032Z] [INFO]  Initializing mongodb://localhost:27017/working_db database URI
+[2026-02-05T13:20:08.046Z] [INFO]  Environment : local
+[2026-02-05T13:20:08.046Z] [INFO]  Initializing mongodb://localhost:27017/working_db database URI
+[2026-02-05T13:20:08.119Z] [INFO]  Environment : local
+[2026-02-05T13:20:08.119Z] [INFO]  Initializing mongodb://localhost:27017/working_db database URI
+[2026-02-05T13:20:08.152Z] [INFO]  Environment : local
+[2026-02-05T13:20:08.153Z] [INFO]  Initializing mongodb://localhost:27017/working_db database URI
+[2026-02-05T13:20:08.171Z] [INFO]  Environment : local
+[2026-02-05T13:20:08.172Z] [INFO]  Initializing mongodb://localhost:27017/working_db database URI
+[2026-02-05T13:20:08.203Z] [INFO]  User documents inside collection:6
+[2026-02-05T13:20:08.204Z] [INFO]  Product documents inside collection:10
+[2026-02-05T13:20:08.204Z] [INFO]  Database connected successfully
+[2026-02-05T13:20:08.206Z] [INFO]  Security & global middlewares loaded
+[2026-02-05T13:20:08.207Z] [INFO]  Routes mounted
+[2026-02-05T13:20:08.208Z] [INFO]  Server started on PORT: 3000
+[2026-02-05T13:20:08.271Z] [INFO]  User documents inside collection:6
+[2026-02-05T13:20:08.273Z] [INFO]  Product documents inside collection:10
+[2026-02-05T13:20:08.273Z] [INFO]  Database connected successfully
+[2026-02-05T13:20:08.276Z] [INFO]  Security & global middlewares loaded
+[2026-02-05T13:20:08.277Z] [INFO]  Routes mounted
+[2026-02-05T13:20:08.278Z] [INFO]  Server started on PORT: 3000
+[2026-02-05T13:20:08.362Z] [INFO]  User documents inside collection:6
+[2026-02-05T13:20:08.364Z] [INFO]  Product documents inside collection:10
+[2026-02-05T13:20:08.364Z] [INFO]  Database connected successfully
+[2026-02-05T13:20:08.366Z] [INFO]  Security & global middlewares loaded
+[2026-02-05T13:20:08.366Z] [INFO]  Routes mounted
+[2026-02-05T13:20:08.367Z] [INFO]  Server started on PORT: 3000
+[2026-02-05T13:20:08.381Z] [INFO]  User documents inside collection:6
+[2026-02-05T13:20:08.382Z] [INFO]  Product documents inside collection:10
+[2026-02-05T13:20:08.382Z] [INFO]  Database connected successfully
+[2026-02-05T13:20:08.384Z] [INFO]  Security & global middlewares loaded
+[2026-02-05T13:20:08.384Z] [INFO]  Routes mounted
+[2026-02-05T13:20:08.386Z] [INFO]  Server started on PORT: 3000
+[2026-02-05T13:20:08.535Z] [INFO]  User documents inside collection:6
+[2026-02-05T13:20:08.536Z] [INFO]  Product documents inside collection:10
+[2026-02-05T13:20:08.536Z] [INFO]  Database connected successfully
+[2026-02-05T13:20:08.538Z] [INFO]  Security & global middlewares loaded
+[2026-02-05T13:20:08.539Z] [INFO]  Routes mounted
+[2026-02-05T13:20:08.540Z] [INFO]  Server started on PORT: 3000
+[2026-02-05T13:20:08.565Z] [INFO]  User documents inside collection:6
+[2026-02-05T13:20:08.567Z] [INFO]  Product documents inside collection:10
+[2026-02-05T13:20:08.567Z] [INFO]  Database connected successfully
+[2026-02-05T13:20:08.569Z] [INFO]  Security & global middlewares loaded
+[2026-02-05T13:20:08.569Z] [INFO]  Routes mounted
+[2026-02-05T13:20:08.571Z] [INFO]  Server started on PORT: 3000
+[2026-02-05T13:20:08.576Z] [INFO]  User documents inside collection:6
+[2026-02-05T13:20:08.577Z] [INFO]  Product documents inside collection:10
+[2026-02-05T13:20:08.577Z] [INFO]  Database connected successfully
+[2026-02-05T13:20:08.579Z] [INFO]  Security & global middlewares loaded
+[2026-02-05T13:20:08.579Z] [INFO]  Routes mounted
+[2026-02-05T13:20:08.581Z] [INFO]  Server started on PORT: 3000
+[2026-02-05T13:20:08.700Z] [INFO]  User documents inside collection:6
+[2026-02-05T13:20:08.702Z] [INFO]  Product documents inside collection:10
+[2026-02-05T13:20:08.702Z] [INFO]  Database connected successfully
+[2026-02-05T13:20:08.705Z] [INFO]  Security & global middlewares loaded
+[2026-02-05T13:20:08.706Z] [INFO]  Routes mounted
+[2026-02-05T13:20:08.708Z] [INFO]  Server started on PORT: 3000
+[2026-02-05T13:20:08.723Z] [INFO]  User documents inside collection:6
+[2026-02-05T13:20:08.726Z] [INFO]  Product documents inside collection:10
+[2026-02-05T13:20:08.726Z] [INFO]  Database connected successfully
+[2026-02-05T13:20:08.728Z] [INFO]  User documents inside collection:6
+[2026-02-05T13:20:08.729Z] [INFO]  Security & global middlewares loaded
+[2026-02-05T13:20:08.729Z] [INFO]  Routes mounted
+[2026-02-05T13:20:08.730Z] [INFO]  Product documents inside collection:10
+[2026-02-05T13:20:08.730Z] [INFO]  Database connected successfully
+[2026-02-05T13:20:08.731Z] [INFO]  Server started on PORT: 3000
+[2026-02-05T13:20:08.733Z] [INFO]  Security & global middlewares loaded
+[2026-02-05T13:20:08.733Z] [INFO]  Routes mounted
+[2026-02-05T13:20:08.735Z] [INFO]  Server started on PORT: 3000
+[2026-02-05T13:20:22.229Z] [INFO]  Environment : local
+[2026-02-05T13:20:22.229Z] [INFO]  Initializing mongodb://localhost:27017/working_db database URI
+[2026-02-05T13:20:22.297Z] [INFO]  Environment : local
+[2026-02-05T13:20:22.297Z] [INFO]  Initializing mongodb://localhost:27017/working_db database URI
+[2026-02-05T13:20:22.421Z] [INFO]  Environment : local
+[2026-02-05T13:20:22.421Z] [INFO]  Initializing mongodb://localhost:27017/working_db database URI
+[2026-02-05T13:20:22.445Z] [INFO]  Environment : local
+[2026-02-05T13:20:22.446Z] [INFO]  Initializing mongodb://localhost:27017/working_db database URI
+[2026-02-05T13:20:22.556Z] [INFO]  Environment : local
+[2026-02-05T13:20:22.556Z] [INFO]  Initializing mongodb://localhost:27017/working_db database URI
+[2026-02-05T13:20:22.709Z] [INFO]  Environment : local
+[2026-02-05T13:20:22.709Z] [INFO]  Initializing mongodb://localhost:27017/working_db database URI
+[2026-02-05T13:20:22.770Z] [INFO]  User documents inside collection:6
+[2026-02-05T13:20:22.772Z] [INFO]  Product documents inside collection:10
+[2026-02-05T13:20:22.772Z] [INFO]  Database connected successfully
+[2026-02-05T13:20:22.775Z] [INFO]  Security & global middlewares loaded
+[2026-02-05T13:20:22.775Z] [INFO]  Routes mounted
+[2026-02-05T13:20:22.777Z] [INFO]  Server started on PORT: 3000
+[2026-02-05T13:20:22.785Z] [INFO]  Environment : local
+[2026-02-05T13:20:22.785Z] [INFO]  Initializing mongodb://localhost:27017/working_db database URI
+[2026-02-05T13:20:22.839Z] [INFO]  Environment : local
+[2026-02-05T13:20:22.840Z] [INFO]  Initializing mongodb://localhost:27017/working_db database URI
+[2026-02-05T13:20:22.857Z] [INFO]  User documents inside collection:6
+[2026-02-05T13:20:22.858Z] [INFO]  Product documents inside collection:10
+[2026-02-05T13:20:22.859Z] [INFO]  Database connected successfully
+[2026-02-05T13:20:22.861Z] [INFO]  Security & global middlewares loaded
+[2026-02-05T13:20:22.861Z] [INFO]  Routes mounted
+[2026-02-05T13:20:22.864Z] [INFO]  Server started on PORT: 3000
+[2026-02-05T13:20:22.962Z] [INFO]  Environment : local
+[2026-02-05T13:20:22.963Z] [INFO]  Initializing mongodb://localhost:27017/working_db database URI
+[2026-02-05T13:20:22.974Z] [INFO]  User documents inside collection:6
+[2026-02-05T13:20:22.976Z] [INFO]  Product documents inside collection:10
+[2026-02-05T13:20:22.976Z] [INFO]  Database connected successfully
+[2026-02-05T13:20:22.979Z] [INFO]  Environment : local
+[2026-02-05T13:20:22.980Z] [INFO]  Initializing mongodb://localhost:27017/working_db database URI
+[2026-02-05T13:20:22.981Z] [INFO]  Security & global middlewares loaded
+[2026-02-05T13:20:22.981Z] [INFO]  Routes mounted
+[2026-02-05T13:20:22.984Z] [INFO]  Server started on PORT: 3000
+[2026-02-05T13:20:22.991Z] [INFO]  User documents inside collection:6
+[2026-02-05T13:20:22.993Z] [INFO]  Product documents inside collection:10
+[2026-02-05T13:20:22.993Z] [INFO]  Database connected successfully
+[2026-02-05T13:20:22.996Z] [INFO]  Security & global middlewares loaded
+[2026-02-05T13:20:22.996Z] [INFO]  Routes mounted
+[2026-02-05T13:20:22.997Z] [INFO]  Environment : local
+[2026-02-05T13:20:22.997Z] [INFO]  Initializing mongodb://localhost:27017/working_db database URI
+[2026-02-05T13:20:22.997Z] [INFO]  Server started on PORT: 3000
+[2026-02-05T13:20:23.078Z] [INFO]  Environment : local
+[2026-02-05T13:20:23.078Z] [INFO]  Initializing mongodb://localhost:27017/working_db database URI
+[2026-02-05T13:20:23.088Z] [INFO]  User documents inside collection:6
+[2026-02-05T13:20:23.089Z] [INFO]  Product documents inside collection:10
+[2026-02-05T13:20:23.090Z] [INFO]  Database connected successfully
+[2026-02-05T13:20:23.092Z] [INFO]  Security & global middlewares loaded
+[2026-02-05T13:20:23.092Z] [INFO]  Routes mounted
+[2026-02-05T13:20:23.093Z] [INFO]  Server started on PORT: 3000
+[2026-02-05T13:20:23.247Z] [INFO]  User documents inside collection:6
+[2026-02-05T13:20:23.248Z] [INFO]  Product documents inside collection:10
+[2026-02-05T13:20:23.248Z] [INFO]  Database connected successfully
+[2026-02-05T13:20:23.251Z] [INFO]  Security & global middlewares loaded
+[2026-02-05T13:20:23.251Z] [INFO]  Routes mounted
+[2026-02-05T13:20:23.252Z] [INFO]  Server started on PORT: 3000
+[2026-02-05T13:20:23.323Z] [INFO]  User documents inside collection:6
+[2026-02-05T13:20:23.325Z] [INFO]  Product documents inside collection:10
+[2026-02-05T13:20:23.325Z] [INFO]  Database connected successfully
+[2026-02-05T13:20:23.327Z] [INFO]  Security & global middlewares loaded
+[2026-02-05T13:20:23.327Z] [INFO]  Routes mounted
+[2026-02-05T13:20:23.328Z] [INFO]  Server started on PORT: 3000
+[2026-02-05T13:20:23.381Z] [INFO]  User documents inside collection:6
+[2026-02-05T13:20:23.382Z] [INFO]  Product documents inside collection:10
+[2026-02-05T13:20:23.382Z] [INFO]  Database connected successfully
+[2026-02-05T13:20:23.384Z] [INFO]  Security & global middlewares loaded
+[2026-02-05T13:20:23.385Z] [INFO]  Routes mounted
+[2026-02-05T13:20:23.386Z] [INFO]  Server started on PORT: 3000
+[2026-02-05T13:20:23.493Z] [INFO]  User documents inside collection:6
+[2026-02-05T13:20:23.495Z] [INFO]  Product documents inside collection:10
+[2026-02-05T13:20:23.495Z] [INFO]  Database connected successfully
+[2026-02-05T13:20:23.497Z] [INFO]  Security & global middlewares loaded
+[2026-02-05T13:20:23.497Z] [INFO]  Routes mounted
+[2026-02-05T13:20:23.499Z] [INFO]  Server started on PORT: 3000
+[2026-02-05T13:20:23.511Z] [INFO]  User documents inside collection:6
+[2026-02-05T13:20:23.513Z] [INFO]  Product documents inside collection:10
+[2026-02-05T13:20:23.513Z] [INFO]  Database connected successfully
+[2026-02-05T13:20:23.515Z] [INFO]  Security & global middlewares loaded
+[2026-02-05T13:20:23.515Z] [INFO]  Routes mounted
+[2026-02-05T13:20:23.516Z] [INFO]  Server started on PORT: 3000
+[2026-02-05T13:20:23.528Z] [INFO]  User documents inside collection:6
+[2026-02-05T13:20:23.529Z] [INFO]  Product documents inside collection:10
+[2026-02-05T13:20:23.529Z] [INFO]  Database connected successfully
+[2026-02-05T13:20:23.531Z] [INFO]  Security & global middlewares loaded
+[2026-02-05T13:20:23.532Z] [INFO]  Routes mounted
+[2026-02-05T13:20:23.533Z] [INFO]  Server started on PORT: 3000
+[2026-02-05T13:20:23.619Z] [INFO]  User documents inside collection:6
+[2026-02-05T13:20:23.620Z] [INFO]  Product documents inside collection:10
+[2026-02-05T13:20:23.620Z] [INFO]  Database connected successfully
+[2026-02-05T13:20:23.622Z] [INFO]  Security & global middlewares loaded
+[2026-02-05T13:20:23.623Z] [INFO]  Routes mounted
+[2026-02-05T13:20:23.624Z] [INFO]  Server started on PORT: 3000

@@ -1,0 +1,12 @@
+git bisect start
+# status: waiting for both good and bad commits
+# bad: [27c50716ff654df682b78ab9ecf91b442958cdde] Commit 8
+git bisect bad 27c50716ff654df682b78ab9ecf91b442958cdde
+# status: waiting for good commit(s), bad commit known
+# good: [338ed6bb471f577ca49d7e111f58033c86e3fb44] Commit 3
+git bisect good 338ed6bb471f577ca49d7e111f58033c86e3fb44
+# bad: [c941999d58945f3342e8523b3521a8f8bcf1abec] Commit 5
+git bisect bad c941999d58945f3342e8523b3521a8f8bcf1abec
+# bad: [408d078a0f27cc7fd9edf43f85c76797de9fd439] Commit 4
+git bisect bad 408d078a0f27cc7fd9edf43f85c76797de9fd439
+# first bad commit: [408d078a0f27cc7fd9edf43f85c76797de9fd439] Commit 4
