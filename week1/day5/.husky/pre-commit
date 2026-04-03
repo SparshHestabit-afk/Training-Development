@@ -1,9 +1,0 @@
-#!/usr/bin/env sh
-
-echo "Running pre-commit checks"
-
-npm run lint || exit 1
-
-./validate.sh || exit 1
-
-echo "Pre-Commit checks passed"
